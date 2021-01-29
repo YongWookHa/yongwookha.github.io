@@ -631,9 +631,28 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     > 일반적인 GAN에서 Generator의 Output Layer와 Discriminator의 Input Layer에는 BN을 적용하지 않는다. 그 이유는 Discriminator가 조작되지 않은 Generator의 결과물의 정확한 값으로 mean, scale을 학습하기 위함이다.
     
     </details>
-- SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?
+- SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?  
+  <details markdown="1">
+    <summary>[참조]</summary>  
+
+    > ![optimizers](https://www.dropbox.com/s/k03ffo5rjlwc03z/optimizers.png?raw=1)  
+    
+  </details>  
+
 	- SGD에서 Stochastic의 의미는?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Stochastic Gradient Descent는 Train Dataset을 전부 이용하는 Batch Gradient Descent와 달리, mini-batch를 이용하여 loss function을 이용한다. 'Stochastic'은 mini-batch가 전체 train dataset에서 무작위로 선택된다는 것을 의미한다.
+    
+  </details>
 	- 미니배치를 작게 할때의 장단점은?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Mini-batch의 사이즈가 작으면 한 iteration의 계산량이 적어지기 때문에 step당 속도가 빨라지며 적은 Graphic Ram으로도 학습이 가능하는 장점이 있다. 하지만 Target의 Variance가 큰 경우, mini-batch-size가 너무 작을 때는 학습데이터에 대한 대표성이 떨어져 학습의 일반성(Generalization)이 불리할 수 있다.
+    
+  </details>
 	- 모멘텀의 수식을 적어 본다면?
 - 간단한 MNIST 분류기를 MLP+CPU 버전으로 numpy로 만든다면 몇줄일까?
 	- 어느 정도 돌아가는 녀석을 작성하기까지 몇시간 정도 걸릴까?
