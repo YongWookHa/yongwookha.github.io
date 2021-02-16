@@ -5,6 +5,7 @@ subtitle: 출근 루틴, 하루 3문제
 tags: [MACHINE_LEARNING, IT, DEVELOP]
 cover-img: https://assets.rappler.com/C39701B689414EE2858D1ED6A10DF1A0/img/D067EDAB25364E8CA6AFBB7537387778/1-job-interview-tips-impress-20150308.jpg
 comments: true
+mathjax: true
 ---
 
 항상 양질의 글을 읽을 수 있어 즐겨찾는 [zzsza(변성윤)](https://github.com/zzsza)님의 블로그에서 [Datascience-Interview-Questions](https://zzsza.github.io/data/2018/02/17/datascience-interivew-questions/) 포스트를 발견했습니다. 공유되어 있는 양질의 문제들을 보며 출근 루틴으로 2~3문제씩 답안을 만들어야겠다는 생각이 들었습니다. 원문에는 다양한 도메인에 대한 질문들이 있는데 그 중, 관심을 가지고 있는 몇 가지 주제에 대해서 공부하고 나름대로 답안을 작성하여 기록하고자 합니다.
@@ -78,6 +79,31 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
   </details>
 - 베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포 / 디리클레 분포에 대해 설명해주세요. 혹시 연관된 분포가 있다면 연관 관계를 설명해주세요
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > **베르누이 분포**  
+      동전 던지기처럼 0혹은 1의 값만 가지는 확률변수 $$X$$에 대해 $$P(X=0)=p, P(X=1)=q, 0 \leq p \leq 1, q=1-p$$ 를 만족하는 확률분포. 일종의 이항분포다.  
+    >  
+    > **이항 분포**  
+      **연속**된 $$n$$번의 독립 시행에서 각 시행의 확률이 $$p$$일때, $$n \geq 0, 0 \leq p \leq 1$$ 를 만족하는 확률분포.  
+    >  
+    > **카테고리 분포**  
+      확률변수 $$X$$의 시행 결과가 $$k$$개의 카테고리이고, 각 카테고리가 선택될 확률이 $$\theta = ( \theta _ { 1 } , \cdots , \theta _ { k } )$$ 라고 할 때, 확률변수 $$X$$는 모수가 $$\theta$$이고 카테고리가 $$k$$개인 카테고리 분포를 따른다고 한다.  
+    >  
+    > **다항 분포**
+      확률이 $$\theta = ( \theta _ { 1 } , \cdots , \theta _ { k } )$$인 카테고리 시행을 n번 **반복**했을 때, 각 카테고리가 선택되는 횟수는 다항분포를 따른다.
+      확률변수 $$Y = ( Y _ { 1 }, \cdots , Y _ { k } ) \in \mathbb { R } ^ { k }$$ 가 모수 $$( n , \theta )$$의 다항분포를 따르고, 카테고리 시행으로 얻은 $$n$$개의 샘플을 $$X = ( x _ { 1 } , \cdots , x _ { n } ) \in \mathbb { R }$$이라 할 때, 다음과 같이 나타낼 수 있다.
+      $$\sum_{i=1}^n \mathbf{x}_i = 
+        \begin{bmatrix} x_{11} \\ \vdots \\ x_{1k} \end{bmatrix} + 
+        \cdots + 
+        \begin{bmatrix} x_{n1} \\ \vdots \\ x_{nk} \end{bmatrix} 
+        = \begin{bmatrix} \sum_i^n x_{i1} \\ \vdots \\ \sum_i^n x_{ik} \end{bmatrix} 
+        = \begin{bmatrix} y_{1} \\ \vdots \\ y_{k} \end{bmatrix} 
+        = \mathbf{y}$$
+
+
+  </details>
 - 조건부 확률은 무엇일까요?
 - 공분산과 상관계수는 무엇일까요? 수식과 함께 표현해주세요
 - 신뢰 구간의 정의는 무엇인가요?
