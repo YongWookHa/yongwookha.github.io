@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 직장에서 써야할 대화 방법
-subtitle: BERT와 비교하여 간단 정리
-tags: [MACHINE_LEARNING, NLP]
-cover-img: /assets/img/albert-einstein.jpg
+subtitle: feat. 포프TV
+tags: [LIFE, BUSINESS, IT]
+cover-img: /assets/img/Business-Communication.jpg
 comments: true
 ---
 
