@@ -38,3 +38,17 @@ chmod 766 SomeFile  # read and write only
 
 chmod -R 700 SomeDir  # Recursive 적용  
 ```
+
+## 🙋‍♂️ User  
+```bash
+sudo groupadd RnD  # 그룹 추가
+sudo adduser 계정이름 # 계정 추가
+sudo adduser 계정이름 그룹이름   
+
+```
+
+## 💻 Device Information  
+```bash
+cat /proc/cpuinfo  # CPU 확인
+lspci | grep -i VGA  # GPU 확인
+```
