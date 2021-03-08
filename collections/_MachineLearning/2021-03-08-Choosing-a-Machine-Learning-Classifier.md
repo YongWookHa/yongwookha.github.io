@@ -8,7 +8,7 @@ comments: true
 mathjax: true
 ---
 
-Machine Learning Project를 갓 시작하게 되었다면, 문제 해결을 위해 어떤 모델을 정해야할지 고민하는 단계가 가장 먼저 시작됩니다. 여기서 Machine Learning은 Deep Learning을 포함하는 더 큰 범주의 학습형 인공지능을 이야기합니다. ![](http://blog.echen.me/2011/04/27/choosing-a-machine-learning-classifier/)에 좋은 글이 있어 정리하려고 합니다.
+Machine Learning Project를 갓 시작하게 되었다면, 문제 해결을 위해 어떤 모델을 정해야할지 고민하는 단계가 가장 먼저 시작됩니다. 여기서 Machine Learning은 Deep Learning을 포함하는 더 큰 범주의 학습형 인공지능을 이야기합니다. [http://blog.echen.me/2011/04/27/choosing-a-machine-learning-classifier/](http://blog.echen.me/2011/04/27/choosing-a-machine-learning-classifier/)에 좋은 글이 있어 정리하려고 합니다.
 
 ![](https://assets-global.website-files.com/5fb24a974499e90dae242d98/5fb24a974499e96f7b2431db_AI%20venn%20diagram.png)
 
@@ -24,17 +24,18 @@ Machine Learning Project를 갓 시작하게 되었다면, 문제 해결을 위�
 모델 선정에는 Occam's Razor 가설을 항상 염두에 두는 것이 좋습니다.
 
 ## Training set의 크기와 모양
-Task의 complexity를 정확히 계산하는 것은 어렵습니다. 대신, 우리가 가진 Training set의 크기와 모양을 가지고 complexity를 추정해볼 수 있습니다. 1차원적으로는 크기(개수)만 볼 수 있습니다. 만약 training set이 작다면 high bias/low variance 모델이 low bias/high variance 모델보다 나은 선택이 될 수 있습니다. 후자는 과적합(overfitting)문제가 발생할 수 있기 때문입니다. 하지만 training set의 크기가 점점 커진다면 어느 순간부터는 low bias / high variance 모델이 더 좋은 결과를 보일 것입니다. high bias 모델은 높은 정확도를 얻기에는 부적합하기 때문입니다.
+Task의 complexity를 정확히 계산하는 것은 어렵습니다. 대신, 우리가 가진 Training set의 크기와 모양을 가지고 complexity를 추정해볼 수 있습니다. 1차원적으로는 크기(개수)만 볼 수 있습니다. 만약 training set이 작다면 high bias/low variance 모델이 low bias/high variance 모델보다 나은 선택이 될 수 있습니다. 후자는 과적합(overfitting)문제가 발생할 수 있기 때문입니다. 하지만 training set의 크기가 점점 커진다면 어느 순간부터는 low bias / high variance 모델이 더 좋은 결과를 보일 것입니다. high bias 모델은 높은 정확도를 얻기에는 부적합하기 때문입니다.  
 
-또한 Generative model과 Discriminative model을 각각 생각해볼 수 있습니다. Generative Model은 데이터 $$X$$가 생성되는 과정을 두 개의 확률 모형, 즉 $$p ( Y )$$, $$p ( X | Y )$$으로 정의하고, 베이즈룰을 사용해 $$p ( Y | X )$$를 간접적으로 도출하는 모델을 가리킵니다. Generative Model의 학습 목표는 확률에 대한 분포(distribution)이 되며 Supervised(지도), Unsupervised(비지도) learning에 속합니다. Discriminative model은 데이터 $$X$$ 주어졌을 때 레이블 $$Y$$가 나타날 조건부확률 $$p ( Y | X )$$를 직접적으로 반환하는 모델을 가리킵니다. Supervised learning 범주에 속합니다.
-
+또한 Generative model과 Discriminative model을 각각 생각해볼 수 있습니다. Generative Model은 데이터 $$X$$가 생성되는 과정을 두 개의 확률 모형, 즉 $$p ( Y )$$ , $$p(X \mid Y)$$으로 정의하고, 베이즈룰을 사용해 $$p ( Y \mid X )$$를 간접적으로 도출하는 모델을 가리킵니다. Generative Model의 학습 목표는 확률에 대한 분포(distribution)이 되며 Supervised(지도), Unsupervised(비지도) learning에 속합니다. Discriminative model은 데이터 $$X$$가 주어졌을 때 레이블 $$Y$$가 나타날 조건부확률 $$p ( Y \mid X )$$를 직접적으로 반환하는 모델을 가리킵니다. Supervised learning 범주에 속합니다.  
 
 ## high bias / low variance  
 **Naive Bayes** : 확률적 독립을 가정하고 count 기반으로 확률을 추정합니다.  
-$$P ( c | x ) = \frac { P ( x | c ) P ( c ) } { P ( x ) }$$  
-거의 가장 간단한 Machine learning 모델입니다. 매우 빠른 연산속도가 장점이며, 낮은 complexity의 task를 처리할 때 꽤 괜찮은 결과를 보여줍니다.
 
-**Logistic Regression** : 데이터의 feature들 사이에 연관성을 고려하면서, 확률적 해석이 가능합니다. 계속해서 새로운 데이터가 수급되는 경우, 쉽게 모델을 업데이트할 수 있다는 장점이 있습니다. 분류 threshold 값을 수정해나가면서 확률적 framework을 만들고 싶을 때 활용하기 좋습니다. Neural Network과 깊은 연관성이 있습니다.
+$$P ( c \mid x ) = \frac { P ( x \mid c ) P ( c ) } { P ( x ) }$$  
+
+거의 가장 간단한 Machine learning 모델입니다. 매우 빠른 연산속도가 장점이며, 낮은 complexity의 task를 처리할 때 꽤 괜찮은 결과를 보여줍니다.  
+
+**Logistic Regression** : 데이터의 feature들 사이에 연관성을 고려하면서, 확률적 해석이 가능합니다. 계속해서 새로운 데이터가 수급되는 경우, 쉽게 모델을 업데이트할 수 있다는 장점이 있습니다. 분류 threshold 값을 수정해나가면서 확률적 framework을 만들고 싶을 때 활용하기 좋습니다. Neural Network과 깊은 연관성이 있습니다.  
 
 
 ## low bias / high variance  
