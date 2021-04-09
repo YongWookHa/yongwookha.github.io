@@ -683,8 +683,8 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
   <details markdown="1">
     <summary>[답안]</summary>
 
-    > $w(t) = m \cdot w(t-1) - \alpha \frac{\partial}{\partial w} \operatorname {Cost}(w)$  
-    > $m$은 모멘텀 상수 (default=0.9)
+    > $$w(t) = m \cdot w(t-1) - \alpha \frac{\partial}{\partial w} \operatorname {Cost}(w)$$  
+    > $$m$$은 모멘텀 상수 (default=0.9)
     
   </details>
 - 딥러닝할 때 GPU를 쓰면 좋은 이유는?  
