@@ -680,16 +680,20 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 	- 모멘텀의 수식을 적어 본다면?
-- 간단한 MNIST 분류기를 MLP+CPU 버전으로 numpy로 만든다면 몇줄일까?
-	- 어느 정도 돌아가는 녀석을 작성하기까지 몇시간 정도 걸릴까?
-	- Back Propagation은 몇줄인가?
-	- CNN으로 바꾼다면 얼마나 추가될까?
-- 간단한 MNIST 분류기를 TF, Keras, PyTorch 등으로 작성하는데 몇시간이 필요한가?
-	- CNN이 아닌 MLP로 해도 잘 될까?
-	- 마지막 레이어 부분에 대해서 설명 한다면?
-	- 학습은 BCE loss로 하되 상황을 MSE loss로 보고 싶다면?
-	- 만약 한글 (인쇄물) OCR을 만든다면 데이터 수집은 어떻게 할 수 있을까?
-- 딥러닝할 때 GPU를 쓰면 좋은 이유는?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > $w(t) = m \cdot w(t-1) - \alpha \frac{\partial}{\partial w} \operatorname {Cost}(w)$  
+    > $m$은 모멘텀 상수 (default=0.9)
+    
+  </details>
+- 딥러닝할 때 GPU를 쓰면 좋은 이유는?  
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > GPU에는 부동소수점 계산에 특화된 수많은 코어가 있어, Matrix Multiplication이 핵심인 Deep Learning에서 병렬 처리를 수행 하기에 유리하다.
+    
+  </details>
 	- 학습 중인데 GPU를 100% 사용하지 않고 있다. 이유는?
 	- GPU를 두개 다 쓰고 싶다. 방법은?
 	- 학습시 필요한 GPU 메모리는 어떻게 계산하는가?
