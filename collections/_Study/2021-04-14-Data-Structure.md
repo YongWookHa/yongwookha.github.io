@@ -17,6 +17,8 @@ comments: true
 ![](https://www.dropbox.com/s/r6iykcm5uyc17k1/dataStructure.png?raw=1)  
 위 그림의 각 leaf node들을 순서대로 확인하고, Python으로 직접 구현해보면서 가물가물했던 개념들을 되짚어봅시다.
 
+---
+
 # Linear Data Structure   
 ## Array  
 배열. 프로그래머라면 생활과 같이 쓰는 자료구조이므로 길게 설명하지 않고 생략합니다.  Python에서는 `list` 내장함수를 이용합니다.
@@ -41,7 +43,7 @@ comments: true
 [6, 5, 4, 3, 2]
 ```
 
----
+
 
 ## Stack  
 ![](https://www.dropbox.com/s/196z8tpwsomjxz1/stack.png?raw=1)  
@@ -83,7 +85,7 @@ class Stack:
 [1, 2, 3]
 ```
 
----
+
 
 ## Queue
 
@@ -180,6 +182,8 @@ class DoubleLinkedListNode:
 > t.next.next.prev
 5<->*4*<->3<->2<->1<->0
 ```  
+
+---
 
 # Non-linear Data Structure  
 __Comming Soon__
