@@ -704,7 +704,27 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
 ## 컴퓨터 비전
 - OpenCV 라이브러리만을 사용해서 이미지 뷰어(Crop, 흑백화, Zoom 등의 기능 포함)를 만들어주세요
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    ```
+    img = cv2.imread('img.png', cv2.IMREAD_COLOR)
+    x1, y1, x2, y2 = 100, 100, 200, 200
+    cropped = img[y1:y2, x1:x2, :]
+
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    zoom = cv2.resize(cropped, dsize=(0, 0), fx=2.0, fy=2.0, interpolation=cv2.INTER_LINEAR)
+    ```
+    
+  </details>
 - 딥러닝 발달 이전에 사물을 Detect할 때 자주 사용하던 방법은 무엇인가요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > 간단하게는 grayscale에서 adaptive threshold를 이용한 segmentation을 이용했고, 특징 검출을 이용한 object detection도 자주 사용되었다. 대표적으로는 orb feature extraction 등이 있다.
+    
+  </details>
 - Fatser R-CNN의 장점과 단점은 무엇인가요?
 - dlib은 무엇인가요?
 - YOLO의 장점과 단점은 무엇인가요?
