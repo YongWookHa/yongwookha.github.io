@@ -726,6 +726,18 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 - Fatser R-CNN의 장점과 단점은 무엇인가요?
+  <details markdown="1">
+    <summary>[답안]</summary>  
+
+    > ![](https://www.dropbox.com/s/ct1koxpgmrawo9p/RCNN-series.jpg?raw=1)  
+    > 
+    > Fast RCNN에서는 전체 이미지에 대한 CNN Feature Extract 결과를 RoI Polling한 후, Selective Search를 통해 Region Proposal을 수행한다. Faster RCNN에서는 Extracted Feature에 Region Proposal Network라고 하는 일종의 CNN을 바로 적용하여 Selective Search에서 발생하는 병목을 줄였습니다. 하지만 여전히 마지막 단계에서 NMS(Non-Maximum-Suppression)를 이용하기 때문에 병목은 존재합니다.
+    > 
+    > **참조**
+    > - RCNN Series : [https://seongkyun.github.io/papers/2019/01/06/Object_detection/](https://seongkyun.github.io/papers/2019/01/06/Object_detection/)
+    > - Selective Search : [https://m.blog.naver.com/laonple/220918802749](https://m.blog.naver.com/laonple/220918802749)
+    
+  </details>
 - dlib은 무엇인가요?
 - YOLO의 장점과 단점은 무엇인가요?
 - 제일 좋아하는 Object Detection 알고리즘에 대해 설명하고 그 알고리즘의 장단점에 대해 알려주세요
