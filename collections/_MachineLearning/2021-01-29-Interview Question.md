@@ -739,7 +739,19 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 - dlib은 무엇인가요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Dlib은 C++ 으로 작성된 크로스 플랫폼 라이브러리이다. 주로 얼굴 검출에 사용된다. HOG(Histogram of Oriented Gradients) Feature를 이용한 방법 혹은 CNN을 통한 얼굴 검출 및 인식 전반을 손쉽게 이용할 수 있다.
+    
+  </details>
 - YOLO의 장점과 단점은 무엇인가요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > YOLO는 CNN에 전체 이미지를 한번만 통과시키기 때문에 RCNN 계열의 방법보다 속도가 빠르다는 장점이 있지만, Faster-RCNN이나 Mask-RCNN보다 정확도는 조금 떨어진다는 단점이 있다.
+    
+  </details>
 - 제일 좋아하는 Object Detection 알고리즘에 대해 설명하고 그 알고리즘의 장단점에 대해 알려주세요
 	- 그 이후에 나온 더 좋은 알고리즘은 무엇인가요? 
 - Average Pooling과 Max Pooling의 차이점은?
