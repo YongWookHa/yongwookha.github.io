@@ -101,11 +101,32 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
         = \begin{bmatrix} \sum_i^n x_{i1} \\ \vdots \\ \sum_i^n x_{ik} \end{bmatrix} 
         = \begin{bmatrix} y_{1} \\ \vdots \\ y_{k} \end{bmatrix} 
         = \mathbf{y}$$
-
+  </details>  
+- 조건부 확률은 무엇일까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+    
+    > 조건부 확률(Conditional probability)는 주어진 사건이 일어났다는 가정 하에, 다른 한 사건이 일어날 확률이다.  
+    > A에 대한 B의 조건부 확률. 즉, A가 일어났을 때 B도 일어날 확률은 다음과 같다.  
+    > $$Pr(B|A)=\frac {Pr(A \cap B)} {Pr(A)}$$  
 
   </details>
-- 조건부 확률은 무엇일까요?
 - 공분산과 상관계수는 무엇일까요? 수식과 함께 표현해주세요
+  <details markdown="1">
+  <summary>[답안]</summary>
+  
+  > 어떤 확률변수 X가 있을 때, 이 변수의 분포를 나타내기 위해 평균과 분산을 이용한다. 그런데 만약, 확률변수가 2가지라면 그 분포를 어떻게 나타내야할지 생각해보자.  
+  > 이때 X와 Y 두 확률변수의 상관관계를 반영하기 위해 이용하는 개념이 공분산(Covariance)이다.  
+  > 확률변수 X, Y에 대한 분포를 나타내려할 때, X의 평균과 Y의 평균을 각각 $$E(X) = \mu, E(Y) = v$$ 라고 하자.  
+  > 이때, 공분산은 X의 편차와 Y의 편차를 곱한것의 평균을 의미한다. 수식은 다음과 같다.  
+  > $$ Cov(X, Y) = E((X-\mu)(Y-v))$$  
+  > 
+  > 공분산(Covariance)이란 각 확률변수들이 어떻게 퍼져있는지 나타내는 것을 말한다. 
+  > 상관계수는 공분산을 구할 때, X, Y의 단위에 의한 영향을 제거하기 위해 이용된다. 정의는 아래와 같이 공분산을 X와 Y의 분산으로 나누는 개념이다.
+  > $$\rho = \frac { Cov(X, Y) } { \sqrt { Var(X) Var(Y)} } , -1 \leq \rho \leq 1$$
+
+  </details>
+
 - 신뢰 구간의 정의는 무엇인가요?
 - p-value를 고객에게는 뭐라고 설명하는게 이해하기 편할까요?
 - p-value는 요즘 시대에도 여전히 유효할까요? 언제 p-value가 실제를 호도하는 경향이 있을까요?
@@ -131,7 +152,7 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
 ##### [목차로 이동](#contents)
 
-## 분석 일반
+## 분석 일반 
 - 좋은 feature란 무엇인가요. 이 feature의 성능을 판단하기 위한 방법에는 어떤 것이 있나요?
 - "상관관계는 인과관계를 의미하지 않는다"라는 말이 있습니다. 설명해주실 수 있나요?
 - A/B 테스트의 장점과 단점, 그리고 단점의 경우 이를 해결하기 위한 방안에는 어떤 것이 있나요?
