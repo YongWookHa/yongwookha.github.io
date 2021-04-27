@@ -120,14 +120,26 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
   > 확률변수 X, Y에 대한 분포를 나타내려할 때, X의 평균과 Y의 평균을 각각 $$E(X) = \mu, E(Y) = v$$ 라고 하자.  
   > 이때, 공분산은 X의 편차와 Y의 편차를 곱한것의 평균을 의미한다. 수식은 다음과 같다.  
   > $$ Cov(X, Y) = E((X-\mu)(Y-v))$$  
+  > 공분산은 두 변수 간에 양의 상관관계가 있는지, 음의 상관관계가 있는지 알려준다. 만약 두 변수가 서로 독립이면 공분산 값은 0 이다.
   > 
-  > 공분산(Covariance)이란 각 확률변수들이 어떻게 퍼져있는지 나타내는 것을 말한다. 
   > 상관계수는 공분산을 구할 때, X, Y의 단위에 의한 영향을 제거하기 위해 이용된다. 정의는 아래와 같이 공분산을 X와 Y의 분산으로 나누는 개념이다.
   > $$\rho = \frac { Cov(X, Y) } { \sqrt { Var(X) Var(Y)} } , -1 \leq \rho \leq 1$$
+  >  
+  > 참조 : [https://destrudo.tistory.com/15](https://destrudo.tistory.com/15)
 
   </details>
 
 - 신뢰 구간의 정의는 무엇인가요?
+  <details markdown="1">
+  <summary>[답안]</summary>
+  
+  > 통계에서는 보통 모집단에서 임의로 선택한 표본으로 확률 분포를 구하게 된다. 이때 모집단에서 선택할 수 있는 수많은 표본들을 대표하기 위해 해당 표본 평균에 대한 표준 편차를 "표준 오차"라고 하며 그 식은 아래와 같다.  
+  > $$ SEM = \frac { \sigma } { \sqrt { n } } $$
+  > **신뢰 구간**은 표본의 평균을 기준으로 -2SEM에서부터 +2SEM까지를 말하며, 모집단에서 선택한 어떤 표본이 해당 구간 안에 들어올 확률인 **신뢰 수준**과 함께 쓰인다. ex) 신뢰수준 95%, 표본오차 ±3% 
+  > 
+  > 참조 : [https://angeloyeo.github.io/2021/01/05/confidence_interval.html](https://angeloyeo.github.io/2021/01/05/confidence_interval.html)
+
+  </details>
 - p-value를 고객에게는 뭐라고 설명하는게 이해하기 편할까요?
 - p-value는 요즘 시대에도 여전히 유효할까요? 언제 p-value가 실제를 호도하는 경향이 있을까요?
 - A/B Test 등 현상 분석 및 실험 설계 상 통계적으로 유의미함의 여부를 결정하기 위한 방법에는 어떤 것이 있을까요?
