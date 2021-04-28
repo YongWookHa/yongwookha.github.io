@@ -141,7 +141,26 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
   </details>
 - p-value를 고객에게는 뭐라고 설명하는게 이해하기 편할까요?
-- p-value는 요즘 시대에도 여전히 유효할까요? 언제 p-value가 실제를 호도하는 경향이 있을까요?
+  <details markdown="1">
+  <summary>[답안]</summary>
+  
+  > ![](https://www.dropbox.com/s/fslndtyehdy0z2k/p-value.png?raw=1)   
+  >  
+  > p-value는 확률 분포 그래프의 양쪽 극단의 범위를 나타낸다.  
+  > 모집단에서 추출한 표본으로 생성한 가설을 검증하는 단계에서, 추가로 뽑은 샘플이 매우 희박한 발생확률을 가지고 있을 때, 이 샘플이 우연히 발생한 것인지 가설이 틀린 것인지를 판단할 때 사용된다.  
+  > 고객에게 설명할때는 "통계적으로 분석하여 예상한 범위를 벗어날 확률"이라고 이야기할 수 있을 듯  
+
+  </details>
+- p-value는 요즘 시대에도 여전히 유효할까요? 언제 p-value가 실제를 호도하는 경향이 있을까요?  
+  <details markdown="1">
+  <summary>[답안]</summary>
+  
+  > p-value는 관측량이 많아지면 낮아질 수 있다. 새로운 가설의 표본이 커지면 표본 오차가 작아지기 때문이다. 빅데이터 시대에는 데이터의 양이 늘어나면서 p-value가 기존 관행처럼 5% 이하이더라도 유의미하지 않을 수 있다.  
+  > 
+  > 참고1: [https://angeloyeo.github.io/2020/03/29/p_value.html](https://angeloyeo.github.io/2020/03/29/p_value.html)  
+  > 참고2: [https://boxnwhis.kr/2016/04/15/dont_be_overwhelmed_by_pvalue.html](https://boxnwhis.kr/2016/04/15/dont_be_overwhelmed_by_pvalue.html)  
+
+  </details>
 - A/B Test 등 현상 분석 및 실험 설계 상 통계적으로 유의미함의 여부를 결정하기 위한 방법에는 어떤 것이 있을까요?
 - R square의 의미는 무엇인가요? 
 - 평균(mean)과 중앙값(median)중에 어떤 케이스에서 뭐를 써야할까요?
