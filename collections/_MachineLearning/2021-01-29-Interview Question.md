@@ -846,6 +846,14 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
 ## 자연어 처리
 - One Hot 인코딩에 대해 설명해주세요
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > ![](https://www.dropbox.com/s/4co60k7p7y4f8i4/one-hot-encoding.png?raw=1)
+    > one-hot encoding은 토큰(token)을 신경망(Neural net)에 입력하기 위해 Embedding하는 방법 중 하나다. 특정 토큰을 matrix로 만들기 위해 vocab size N개의 차원을 가지는 벡터를 만들고, 특정 Index만 1값을 주고 나머지를 0으로 하는 방식으로 토큰을 벡터화한다. 
+    
+  </details>
+
 - POS 태깅은 무엇인가요? 가장 간단하게 POS tagger를 만드는 방법은 무엇일까요?
 - 문장에서 "Apple"이란 단어가 과일인지 회사인지 식별하는 모델을 어떻게 훈련시킬 수 있을까요?
 - 뉴스 기사에 인용된 텍스트의 모든 항목을 어떻게 찾을까요?
