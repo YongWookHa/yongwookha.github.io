@@ -3,7 +3,7 @@ layout: post
 title: OCR 엔진 개발기
 subtitle: feat. open source
 tags: [MACHINE_LEARNING, DEVELOP]
-cover-img: assets/img/OCR_cover.jpg
+cover-img: /assets/img/OCR_cover.jpg
 comments: true
 mathjax: true
 ---
