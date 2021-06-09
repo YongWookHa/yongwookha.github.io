@@ -57,3 +57,8 @@ sudo adduser 계정이름 그룹이름
 cat /proc/cpuinfo  # CPU 확인
 lspci | grep -i VGA  # GPU 확인
 ```
+
+## 📥 Download  
+```bash
+curl -O <url to download>
+```
