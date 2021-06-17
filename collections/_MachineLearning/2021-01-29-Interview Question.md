@@ -162,7 +162,28 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
   </details>
 - A/B Test 등 현상 분석 및 실험 설계 상 통계적으로 유의미함의 여부를 결정하기 위한 방법에는 어떤 것이 있을까요?
+  <details markdown="1">
+  <summary>[답안]</summary>
+  
+  > 1. AA test  
+  >   A와 B를 비교하기 전에 분산된 트래픽에 모두 A안을 보여주고, 동일한 Variation이 관측되는지 확인하는 방법
+  > 2. p-value  
+  >  통계적 가설이 재현되지 않는 예외 경우의 비율
+
+  </details>
 - R square의 의미는 무엇인가요? 
+  <details markdown="1">
+  <summary>[답안]</summary>
+  
+  > 결정 계수로서, 가설의 설명력을 의미한다.  
+  > 
+  > $$ R ^ 2 = ( 1- \frac {추정 모형 MSE} {평균 관측 값의 MSE }) $$  
+  > 값이 1에 가까울수록 추정 모형의 설명력(regression line)이 높고, data에 fit하다고 해석할 수 있다.
+  >
+  > 참조 : (https://jinchory.tistory.com/332)[https://jinchory.tistory.com/332]
+
+
+  </details>
 - 평균(mean)과 중앙값(median)중에 어떤 케이스에서 뭐를 써야할까요?
 - 중심극한정리는 왜 유용한걸까요?
 - 엔트로피(entropy)에 대해 설명해주세요. 가능하면 Information Gain도요.
