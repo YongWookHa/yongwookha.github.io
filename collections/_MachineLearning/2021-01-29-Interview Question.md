@@ -185,7 +185,24 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
   </details>
 - 평균(mean)과 중앙값(median)중에 어떤 케이스에서 뭐를 써야할까요?
+  <details markdown="1">
+  <summary>[답안]</summary>
+  
+  > ![](https://www.dropbox.com/s/ck7e8ga0pz3a2sa/mean_median_mode.png?raw=1)  
+  > 위의 이미지는 평균, 중앙값, 최빈값(mode)를 표현한다.  
+  > 데이터의 분포 모양에 따라 적절한 값을 골라쓴다.
+
+  </details>  
 - 중심극한정리는 왜 유용한걸까요?
+<details markdown="1">
+  <summary>[답안]</summary>
+  
+  > 중심극한정리 : "모집단이 「평균이 $$ μ $$이고 표준편차가 $$ σ $$인 임의의 분포」을 이룬다고 할 때, 이 모집단으로부터 추출된 표본의 「표본의 크기 $$ n $$이 충분히 크다」면 표본 평균들이 이루는 분포는 「평균이 $$ μ $$ 이고 표준편차가 $$ frac { σ } { \sqrt { n } } $$ 인 정규분포」에 근접한다.  
+  >   
+  > "모집단의 분포에 상관 없이" 표본이 크면 표본 평균들의 분포가 정규 분포로 수렴한다는 점을 이용하여 수학적 확률 판단이 가능해진다.
+  > 참조 : [https://drhongdatanote.tistory.com/57](https://drhongdatanote.tistory.com/57)
+
+  </details>  
 - 엔트로피(entropy)에 대해 설명해주세요. 가능하면 Information Gain도요.
 - 요즘같은 빅데이터(?)시대에는 정규성 테스트가 의미 없다는 주장이 있습니다. 맞을까요?
 - 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
