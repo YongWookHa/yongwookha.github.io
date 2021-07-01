@@ -194,7 +194,7 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
   </details>  
 - 중심극한정리는 왜 유용한걸까요?
-<details markdown="1">
+  <details markdown="1">
   <summary>[답안]</summary>
   
   > 중심극한정리 : "모집단이 「평균이 $$ μ $$이고 표준편차가 $$ σ $$인 임의의 분포」을 이룬다고 할 때, 이 모집단으로부터 추출된 표본의 「표본의 크기 $$ n $$이 충분히 크다」면 표본 평균들이 이루는 분포는 「평균이 $$ μ $$ 이고 표준편차가 $$ frac { σ } { \sqrt { n } } $$ 인 정규분포」에 근접한다.  
@@ -204,6 +204,16 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
   </details>  
 - 엔트로피(entropy)에 대해 설명해주세요. 가능하면 Information Gain도요.
+  <details markdown="1">
+  <summary>[답안]</summary>
+  
+  > 엔트로피(Entropy)는 무질서성을 의미한다. 통계에서는 관측 범위 내에서 데이터의 분포가 고르면 엔트로피가 낮다고 하며, 분포가 특정 범위로 몰려있으면 엔트로피가 높다고 할 수 있다.  정보이득(Information Gain)은 엔트로피를 기반으로 정보량을 측정하여 "어떤 특징을 선택함으로서 데이터를 더 잘 구분할 수 있는가?"를 의미한다.   
+  >  
+  > $$ T $$ 는 Training Data, $$ a $$ 는 어떤 특징(attribute)을 의미할 때,
+  > $$ InformationGain(T, a) = Entropy(T) - Entropy(T|a) $$ 이다.
+  > $$ Entropy(T|a) $$ 는 a를 선택했을 때 T의 엔트로피 값을 의미한다.
+
+  </details> 
 - 요즘같은 빅데이터(?)시대에는 정규성 테스트가 의미 없다는 주장이 있습니다. 맞을까요?
 - 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
 - “likelihood”와 “probability”의 차이는 무엇일까요?
