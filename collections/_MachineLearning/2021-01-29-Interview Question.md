@@ -246,7 +246,7 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
   <details markdown="1">
   <summary>[답안]</summary>
   
-  > **상관관계** : 어떤 변인 x의 값과 다른 변인 y의 값이 함께 변할 때, x와 y의 관계
+  > **상관관계** : 어떤 변인 x의 값과 다른 변인 y의 값이 함께 변할 때, x와 y의 관계  
   > **인과관계** : 어떤 변인 x의 값이 변하면, 그로 인해서 다른 변인 y의 값이 변할 때, x와 y의 관계
   >
   > 어떤 요인에 의해 x와 y의 값이 동시에 영향을 받아서 변할 수 있다. 영향을 받는 외부 요인을 함께 가진다면 x와 y는 상관관계일 수 있지만 이것으로 x와 y의 인과관계를 설명할 수는 없다.
@@ -332,9 +332,9 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
   <details markdown="1">
   <summary>[답안]</summary>
 
-  > LSA(Latent Semantic Analysis, 잠재의미분석) : SVD를 이용하여 차원을 축소  
-  > LDA(Latent Dirichlet Allocation, 잠재디리클레할당) : 주제별 단어분포와 문서별 주제 분포를 학습하여 Topic Modeling 하는 방법  
-  > SVD(Singular Value Decomposition) : 특이값 분해  
+  > **LSA(Latent Semantic Analysis, 잠재의미분석)** : SVD를 이용하여 차원을 축소  
+  > **LDA(Latent Dirichlet Allocation, 잠재디리클레할당)** : 주제별 단어분포와 문서별 주제 분포를 학습하여 Topic Modeling 하는 방법  
+  > **SVD(Singular Value Decomposition)** : 특이값 분해  
   >
   > LSA와 SVD를 이용하여 데이터를 분해하고, 함축된 의미(Latent Semantic)를 추출하여 이를 통해 데이터를 압축하거나 차원을 축소한다. 특징 출현 횟수를 사용하는 LSA의 구조에 확률 모델을 도입하여 특징 출현 확률 기반으로 설계된 pLSA(Probabilistic Latent Semantic Analysis)는 SVD대신 NMF(Non-negative Matrix Factorization)를 이용하였다. 이후, LDA는 주제별 단어분포와 문서별 주제분포 모두 고려하되, 디리클레 분포를 따르도록 설계하여 주제를 뽑아낸다.  
   >
@@ -380,9 +380,9 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
   > ![](https://www.dropbox.com/s/utsfodbxj9uihv5/%ED%8C%8C%EC%9D%BC%202019.%2010.%2021.%20%EC%98%A4%EC%A0%84%2010%2054%2032.jpeg?raw=1)
   >  
-  > * Support : X와 Y 두 item이 얼마나 자주 발생하는지를 의미  
-  > * Confidence : X가 발생했을 떄, Y도 포함되어 있는 비율  
-  > * Lift : X가 발생하지 않았을 때의 Y 발생 비율과 X가 발생했을 때 Y 발생 비율의 대비. 숫자가 1보다 크거나 작은 정도에 따라 연관성을 파악할 수 있다.  
+  > * **Support** : X와 Y 두 item이 얼마나 자주 발생하는지를 의미  
+  > * **Confidence** : X가 발생했을 떄, Y도 포함되어 있는 비율  
+  > * **Lift** : X가 발생하지 않았을 때의 Y 발생 비율과 X가 발생했을 때 Y 발생 비율의 대비. 숫자가 1보다 크거나 작은 정도에 따라 연관성을 파악할 수 있다.  
   > 
   > _[참조 : https://rfriend.tistory.com/191](https://rfriend.tistory.com/191)_
 
@@ -813,6 +813,15 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 	- 학습 중인데 GPU를 100% 사용하지 않고 있다. 이유는?
+    <details markdown="1">
+    <summary>[답안]</summary>
+
+    > GPU를 100% 활용하지 못하는 경우는 두가지로 나뉜다. 첫번째는 GPU의 그래픽 메모리를 충분히 활용하지 못하는 경우, 두번째는 GPU의 연산 능력을 충분히 활용하지 못하는 경우이다.
+    > 그래픽 메모리가 100%가 아닌 경우, 작은 Batch Size가 문제일 수 있다. 또는 Multi-GPU 환경에서 Data Parallel 방법으로 GPU 로드를 분산할 시, 각 GPU의 output을 한 GPU로 모아서 loss 계산을 하여 GPU 메모리 사용량의 불균형이 발생할 수 있다.
+    > 연산 능력이 100%가 아닌 경우에는 모델의 계산 과정에서 CPU 병목이 원인일 수 있다.
+    
+  </details>
+
 	- GPU를 두개 다 쓰고 싶다. 방법은?
 	- 학습시 필요한 GPU 메모리는 어떻게 계산하는가?
 - TF, Keras, PyTorch 등을 사용할 때 디버깅 노하우는?
