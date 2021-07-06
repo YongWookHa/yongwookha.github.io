@@ -912,6 +912,20 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
   </details>
 
 - POS 태깅은 무엇인가요? 가장 간단하게 POS tagger를 만드는 방법은 무엇일까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > POS(Part-Of-Speech) 태깅은 문장 내의 단어들을 형태소 분석하여 태그 붙여주는 방법을 말한다. 형태소 분석을 위해 쓸 수 있는 여러 라이브러리가 있다. 그 중, Python 기준으로 가장 인기가 많은 POS Tagger는 NLTK이다. 아래와 같은 간단한 import 만으로 형태소 분석기를 즉시 이용 가능하다.
+    > ```
+    >>> import nltk
+    >>>from nltk.tokenize import word_tokenize
+    >>> text = word_tokenize("Hello welcome to the world of to learn Categorizing and POS Tagging with NLTK and Python")
+    >>> nltk.pos_tag(text)  
+    >  
+    > [('Hello', 'NNP'), ('welcome', 'NN'), ('to', 'TO'), ('the', 'DT'), ('world', 'NN'), ('of', 'IN'), ('to', 'TO'), ('learn', 'VB'), ('Categorizing', 'NNP'), ('and', 'CC'), ('POS', 'NNP'), ('Tagging', 'NNP'), ('with', 'IN'), ('NLTK', 'NNP'), ('and', 'CC'), ('Python', 'NNP')]
+    > ```
+    
+  </details>
 - 문장에서 "Apple"이란 단어가 과일인지 회사인지 식별하는 모델을 어떻게 훈련시킬 수 있을까요?
 - 뉴스 기사에 인용된 텍스트의 모든 항목을 어떻게 찾을까요?
 - 음성 인식 시스템에서 생성된 텍스트를 자동으로 수정하는 시스템을 어떻게 구축할까요?
