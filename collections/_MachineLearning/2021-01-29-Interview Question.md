@@ -927,6 +927,12 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 - 문장에서 "Apple"이란 단어가 과일인지 회사인지 식별하는 모델을 어떻게 훈련시킬 수 있을까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > "Apple" 단어를 포함한 문장들과 과일, 회사 Label을 pair한 학습 데이터를 만든다. 단어를 판단할 때 문맥을 구성하는 다른 토큰들을 고려할 수 있는 모델을 선정한다. 예를 들어 Co-occurence 기반의 모델을 이용하면 n-gram으로 주변에 출현한 토큰을 통계적으로 이용하는 방법을 이용할 수 있고, LSTM 같은 간단한 Sequencial Data를 다루는 모델이나 Transformer, BERT와 같은 비교적 최신 모델도 이용할 수 있다.
+    
+  </details>
 - 뉴스 기사에 인용된 텍스트의 모든 항목을 어떻게 찾을까요?
 - 음성 인식 시스템에서 생성된 텍스트를 자동으로 수정하는 시스템을 어떻게 구축할까요?
 - 잠재론적, 의미론적 색인은 무엇이고 어떻게 적용할 수 있을까요?
