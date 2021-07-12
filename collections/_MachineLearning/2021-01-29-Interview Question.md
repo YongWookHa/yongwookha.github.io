@@ -876,10 +876,16 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
   <details markdown="1">
     <summary>[답안]</summary>
 
-    > YOLO는 CNN에 전체 이미지를 한번만 통과시키기 때문에 RCNN 계열의 방법보다 속도가 빠르다는 장점이 있지만, Faster-RCNN이나 Mask-RCNN보다 정확도는 조금 떨어진다는 단점이 있다.
+    > YOLO는 CNN에 전체 이미지를 한번만 통과시키기 때문에 RCNN 계열의 방법보다 속도가 빠르다는 장점이 있지만, Faster-RCNN이나 Mask-RCNN보다 정확도는 조금 떨어진다는 단점이 있다. 다양한 기법을 조합했기 때문에 구현이 까다롭고 그리드 기반으로 Object Detection을 하기 때문에 한번에 최대로 검출 할 수 있는 물체의 수가 제한되는 점도 단점이다.
     
   </details>
 - 제일 좋아하는 Object Detection 알고리즘에 대해 설명하고 그 알고리즘의 장단점에 대해 알려주세요
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > YOLO-V5는 비교적 큰 커뮤니티 덕분에 편리하게 이용할 수 있으며, 특히 [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5) 레포지토리에서는 손쉽게 옵션을 변경할 수 있고 가변적인 모델 사이즈 변경을 지원하여 Real time 속도의 모델부터 SOTA에 버금가는 정확도 중심의 큰 모델까지 편리하게 이용할 수 있어 가장 선호한다. 장단점은 위의 문항 답안과 같다.
+    
+  </details>
 	- 그 이후에 나온 더 좋은 알고리즘은 무엇인가요? 
 - Average Pooling과 Max Pooling의 차이점은?
 - Deep한 네트워크가 좋은 것일까요? 언제까지 좋을까요?
