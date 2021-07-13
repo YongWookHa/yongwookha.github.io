@@ -949,6 +949,13 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 - 잠재론적, 의미론적 색인은 무엇이고 어떻게 적용할 수 있을까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > 잠재 의미 색인(LSI, Latent Semantic Indexing) 혹은 잠재 의미 분석(LSA, Latent Semantic Analysis)은 BoW(Bag of Words)에 기반한 단어의 출현 빈도수를 이용한 수치화는 자연어에서 발생하는 동의어(Synonymy) 혹은 다의어(Polysemy)와 같은 문제를 다룰 수 없기에, 이를 보완하기 위해 만들어진 방법이다. 새로운 문서에 공존하는 단어들을 통계적으로 분석하여 단어의 의미를 문서단위로 다르게 예측한다.
+    > 참조 : [https://sens.tistory.com/354](https://sens.tistory.com/354)
+    
+  </details>
 - 영어 텍스트를 다른 언어로 번역할 시스템을 어떻게 구축해야 할까요?
 - 뉴스 기사를 주제별로 자동 분류하는 시스템을 어떻게 구축할까요?
 - Stop Words는 무엇일까요? 이것을 왜 제거해야 하나요?
