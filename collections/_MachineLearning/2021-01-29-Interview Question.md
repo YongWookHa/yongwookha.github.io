@@ -1015,6 +1015,15 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
 ## GAN
 - GAN에 대해 아는대로 설명해주세요
+<details markdown="1">
+    <summary>[답안]</summary>
+
+    > **Generative Adverserial Network**  
+    > Generator(G)와 Discriminator(D)로 역할이 나뉜 두 모델이 경쟁하며 학습하는 구조의 모델을 의미한다. D는 입력되는 데이터가 Real인지 Fake인지 구분하는 역할을 수행하며, G는 Real과 구분하기 어려운 Fake를 생성하여 D를 속인다. Loss의 구성이 흥미롭다. D는 Real 데이터와 Fake 데이터를 섞어, Real과 Fake의 구분 능력을 Loss Function으로 하여 학습하고, G는 D가 Fake를 Real로 인식하도록하는 방향으로 학습한다. 수식으로 설명하면 다음과 같다.
+    >  $$min_{G}max_{D}Loss(D, G)=CrossEntropy(D(x))+CrossEntropy(D(G(z)))$$
+    > $$z는 G가 입력으로 가정하는 데이터 분포, latent vector(잠재벡터)이다.$$
+      
+  </details>
 - GAN의 단점은 무엇인가요?
 - LSGAN에 대해 설명해주세요
 - GAN이 왜 뜨고 있나요?
