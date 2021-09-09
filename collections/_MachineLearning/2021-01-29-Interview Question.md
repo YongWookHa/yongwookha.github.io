@@ -1015,7 +1015,7 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
 ## GAN
 - GAN에 대해 아는대로 설명해주세요
-<details markdown="1">
+  <details markdown="1">
     <summary>[답안]</summary>
 
     > **Generative Adverserial Network**  
@@ -1025,7 +1025,20 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
       
   </details>
 - GAN의 단점은 무엇인가요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > 1. Generator와 Discriminator 모델들의 밸런스를 잡기 어렵기 때문에 학습이 대체로 불안정하고 수렴이 어렵다.  
+    > 2. 학습 완료된 Generator의 성능 평가를 사람이 직접 해야한다.
+      
+  </details>
 - LSGAN에 대해 설명해주세요
+ <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Discriminator가 Real과 Fake를 구분할 때 CrossEntorpy 대신 Least square error를 이용한다. 학습 과정에서 최소화해야하는 Entropy는 모델이 "긴가민가"할 때 높은 값으로 나온다. 이는 역설적으로 모델이 높은 확신도로 맞춘 데이터에 대해서는 거의 학습하지 않는다는 것을 의미한다. 일반적인 Classfication 모델에서는 문제가 안되지만, GAN에서는 이 점이 Generator의 학습을 저해하는 요소이다. 따라서 최대한 "모든" 데이터에 대해 학습할 수 있도록 Squared error를 최소화하는 Loss을 채택한 것이 LSGAN이다.
+      
+  </details>
 - GAN이 왜 뜨고 있나요?
 - Auto Encoder에 대해서 아는대로 얘기하라
 	- MNIST AE를 TF나 Keras등으로 만든다면 몇줄일까?
