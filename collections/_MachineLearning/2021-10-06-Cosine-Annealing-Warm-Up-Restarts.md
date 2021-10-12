@@ -14,7 +14,7 @@ Optimzer의 Learning Rate을 관리하는 Scheduler를 이용하면 똑같은 �
 
 ## Pytorch Original  
 `torch.optim.lr_scheduler.CosineAnnealingWarmRestarts`는 아래와 같은 parameter를 가집니다.  
-_[https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingWarmRestarts.html](https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingWarmRestarts.html)
+_참조 : [pytorch tutorial](https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingWarmRestarts.html)_
 - `optimizer` _(Optimizer)_ – Wrapped optimizer.
 - `T_0` _(int)_ – Number of iterations for the first restart.
 - `T_mult` _(int, optional)_ – A factor increases $$T_{i}$$ after a restart. Default: 1.
@@ -30,7 +30,7 @@ _[https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnea
 
 위의 Pytorch 제공 class에서 scheduler 주기에 따라 `eta_max`를 변경하거나, `warmup_steps`를 바꾸는 등의 더 많은 조작 요소를 추가하기 위해 나름대로의 custom 코드를 만들어 이용해왔습니다. 그런데 제가 만들었던 코드 보다 더 깔끔하고 직관적으로 작성된 repository가 있어 소개하고자 합니다.
 
-[katsura-jp/pytorch-cosine-annealing-with-warmup](https://github.com/katsura-jp/pytorch-cosine-annealing-with-warmup/blob/master/cosine_annealing_warmup/scheduler.py)에서는 `pip`을 통해 install해서 간편하게 import 할 수 있는 pytorch `lr_scheduler` class를 제공합니다.
+[katsura-jp/pytorch-cosine-annealing-with-warmup](https://github.com/katsura-jp/pytorch-cosine-annealing-with-warmup/blob/master/cosine_annealing_warmup/scheduler.py)에서는 `pip`을 통해 install해서 간편하게 import 할 수 있는 pytorch `lr_scheduler class`를 제공합니다.
 
 이 라이브러리에서는 아래의 parameter를 제공합니다.
 - `optimizer` _(Optimizer)_: Wrapped optimizer.
