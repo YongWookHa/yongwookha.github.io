@@ -24,8 +24,6 @@ comments: true
 
 종종 free-format slide를 작성할 때가 있는데, 다음번에도 이용해보려는 마음으로 slidev의 기본적인 요소들을 기록해봅니다.
 
-| | |
-| --- | --- |
 | 공식 tutorial | [https://sli.dev/guide/](https://sli.dev/guide/) |
 | stackblitz에서 직접 해보기 | [![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://sli.dev/new) |
 
