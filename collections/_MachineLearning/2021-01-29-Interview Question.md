@@ -813,7 +813,7 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 	- 학습 중인데 GPU를 100% 사용하지 않고 있다. 이유는?
-    <details markdown="1">
+  <details markdown="1">
     <summary>[답안]</summary>
 
     > GPU를 100% 활용하지 못하는 경우는 두가지로 나뉜다. 첫번째는 GPU의 그래픽 메모리를 충분히 활용하지 못하는 경우, 두번째는 GPU의 연산 능력을 충분히 활용하지 못하는 경우이다.
@@ -823,7 +823,23 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
   </details>
 
 	- GPU를 두개 다 쓰고 싶다. 방법은?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Pytorch에서는 `DataParallel` 또는 `DistributedDataParallel`을 이용해서 모델과 데이터를 multi-gpu 또는 multi-device에 배분할 수 있다.
+    
+  </details>
 	- 학습시 필요한 GPU 메모리는 어떻게 계산하는가?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > GPU 메모리의 사용량에 주로 영향을 미치는 요소는 모델의 weights(+biases)와 data tensor이다.
+    > Trainable Parameter의 개수에 4byte(FP16) 또는 8byte(FP32)를 곱하면 DL 모델의 GPU 메모리 사용량을 대략적으로 알 수 있다. 그리고 여기에 input data의 tensor size를 더하면 된다.
+    >
+    > $$Total\_GRAM = Model\_Size + Batch\_Size \times Tensor\_Size + \alpha$$  
+    > _$$\alpha$$에는 Momentum 등을 이용하는 Optimizer의 variable, model forward 과정에서 쓰이는 temporary variable 등이 있다.$$_
+    
+  </details>
 - TF, Keras, PyTorch 등을 사용할 때 디버깅 노하우는?
 - 뉴럴넷의 가장 큰 단점은 무엇인가? 이를 위해 나온 One-Shot Learning은 무엇인가? 
 
