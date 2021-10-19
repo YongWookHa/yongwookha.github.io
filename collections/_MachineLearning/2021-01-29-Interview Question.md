@@ -899,11 +899,27 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
   <details markdown="1">
     <summary>[답안]</summary>
 
-    > YOLO-V5는 비교적 큰 커뮤니티 덕분에 편리하게 이용할 수 있으며, 특히 [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5) 레포지토리에서는 손쉽게 옵션을 변경할 수 있고 가변적인 모델 사이즈 변경을 지원하여 Real time 속도의 모델부터 SOTA에 버금가는 정확도 중심의 큰 모델까지 편리하게 이용할 수 있어 가장 선호한다. 장단점은 위의 문항 답안과 같다.
+    > YOLO-v5는 비교적 큰 커뮤니티 덕분에 편리하게 이용할 수 있으며, 특히 [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5) 레포지토리에서는 손쉽게 옵션을 변경할 수 있고 가변적인 모델 사이즈 변경을 지원하여 Real time 속도의 모델부터 SOTA에 버금가는 정확도 중심의 큰 모델까지 편리하게 이용할 수 있어 가장 선호한다. 장단점은 위의 문항 답안과 같다.
     
   </details>
-	- 그 이후에 나온 더 좋은 알고리즘은 무엇인가요? 
+- 그 이후에 나온 더 좋은 알고리즘은 무엇인가요?  
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Object detection을 적용한 target의 domain에 따라 "더 좋은" 알고리즘은 다르다고 볼 수 있다. 예를들어, text detection 분야에서는 grid 기반의 yolo보다 pixel 단위로 heatmap을 그리는 u-net 기반의 [CRAFT](https://github.com/clovaai/CRAFT-pytorch)의 성능이 더 좋다.  
+    > 가장 보편적으로 이용하는 COCO dataset을 이용한 sota모델 중, 현재는 swin-transformer를 이용한 모델이 현재 최상위권에 있다. swin-transformer는 convolution 대신 이미지를 patch 단위로 자르고, cyclic-shift라는 방식으로 patch merging하여 feature extraction하는 방식을 이용한다.  
+    > _참조: [https://paperswithcode.com/sota/object-detection-on-coco](https://paperswithcode.com/sota/object-detection-on-coco)_
+    
+  </details>
 - Average Pooling과 Max Pooling의 차이점은?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Pooling은 Feature map에서 feature 수를 감소시키는 역할을 한다.  
+    > Average Pooling은 kernel window에 해당하는 값들의 평균을 대표로, Max Pooling은 가장 큰 값을 대표로 feature 수를 감소시킨다.  
+    > Max pooling은 kernel 영역 내에서 가장 두드러지는 값을 남기고, average는 영역 내의 모든 값을 고려하는 효과가 있다.    
+    
+  </details>
 - Deep한 네트워크가 좋은 것일까요? 언제까지 좋을까요?
 - Residual Network는 왜 잘될까요? Ensemble과 관련되어 있을까요?
 - CAM(Class Activation Map)은 무엇인가요?
