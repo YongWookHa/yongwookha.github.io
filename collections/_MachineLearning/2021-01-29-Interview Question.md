@@ -921,6 +921,12 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 - Deep한 네트워크가 좋은 것일까요? 언제까지 좋을까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > 일반적으로 Deep한 네트워크는 Capacity가 높아서 그만큼 Complex한 문제를 풀기에 적합하다. 하지만 target task에 비해 네트워크가 과도하게 Deep한 경우 overfitting이 일어날 수 있으며, 학습 난이도가 높아질 수 있다.
+    
+  </details>
 - Residual Network는 왜 잘될까요? Ensemble과 관련되어 있을까요?
 - CAM(Class Activation Map)은 무엇인가요?
 - Localization은 무엇일까요?
@@ -989,6 +995,16 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 - 영어 텍스트를 다른 언어로 번역할 시스템을 어떻게 구축해야 할까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > 1. 영어 텍스트와 번역 목표 언어가 pair로 구성된 데이터를 구비한다.  
+    > 2. 2021년 현재 비교적 높은 성능을 보이는 BERT, ELECTRA 등의 Transformer기반 모델의 pre-trained Language Model을 구비한다.  
+    > 3. `1`에서 준비한 데이터 쌍을 이용하여 fine-tune 학습을 수행한다.
+    > 4. REST API를 지원하는 web-framework를 이용하여 서비스를 구성한다.
+    > 5. Docker를 이용하여 container 빌드하여 서비스한다.
+    
+  </details>
 - 뉴스 기사를 주제별로 자동 분류하는 시스템을 어떻게 구축할까요?
 - Stop Words는 무엇일까요? 이것을 왜 제거해야 하나요?
 - 영화 리뷰가 긍정적인지 부정적인지 예측하기 위해 모델을 어떻게 설계하시겠나요?
