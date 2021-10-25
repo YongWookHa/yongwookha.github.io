@@ -1081,13 +1081,19 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
       
   </details>
 - LSGAN에 대해 설명해주세요
- <details markdown="1">
+  <details markdown="1">
     <summary>[답안]</summary>
 
     > Discriminator가 Real과 Fake를 구분할 때 CrossEntorpy 대신 Least square error를 이용한다. 학습 과정에서 최소화해야하는 Entropy는 모델이 "긴가민가"할 때 높은 값으로 나온다. 이는 역설적으로 모델이 높은 확신도로 맞춘 데이터에 대해서는 거의 학습하지 않는다는 것을 의미한다. 일반적인 Classfication 모델에서는 문제가 안되지만, GAN에서는 이 점이 Generator의 학습을 저해하는 요소이다. 따라서 최대한 "모든" 데이터에 대해 학습할 수 있도록 Squared error를 최소화하는 Loss을 채택한 것이 LSGAN이다.
       
   </details>
 - GAN이 왜 뜨고 있나요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > 먼저, Generator와 Discriminator를 경쟁시키면서 학습한다는 발상이 흥미롭다. 학습 난이도가 높기 때문에 새로운 학습 전략이 필요했는데, KL-divergence 이후에 JS-divergence, Wasserstein distance 등이 대두되며 기존에 생성 모델으로 주로 이용하던 VAE에 비해 개성 있고 형태적으로 더 다양한 결과를 얻을 수 있게 되었다. 이를 통해 GAN이 생성 모델의 새로운 패러다임으로 떠오르고 있다.
+      
+  </details>
 - Auto Encoder에 대해서 아는대로 얘기하라
 	- MNIST AE를 TF나 Keras등으로 만든다면 몇줄일까?
 	- MNIST에 대해서 임베딩 차원을 1로 해도 학습이 될까?
