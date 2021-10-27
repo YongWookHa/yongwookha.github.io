@@ -1109,6 +1109,12 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
 ## 추천 시스템
 - 추천 시스템에서 사용할 수 있는 거리는 무엇이 있을까요?
+<details markdown="1">
+    <summary>[답안]</summary>
+
+    > Recommendation은 주로 top k개의 결과에 대해 평가하는 경우가 많다. Mean Average Precision 또는 Mean Average Recall 등을 이용할 수 있다.
+      
+  </details>
 - User 베이스 추천 시스템과 Item 베이스 추천 시스템 중 단기간에 빠른 효율을 낼 수 있는 것은 무엇일까요?
 - 성능 평가를 위해 어떤 지표를 사용할까요?
 - Explicit Feedback과 Implicit Feedback은 무엇일까요? Impicit Feedback을 어떻게 Explicit하게 바꿀 수 있을까요?
