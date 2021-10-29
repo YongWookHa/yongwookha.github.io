@@ -928,6 +928,14 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 - Residual Network는 왜 잘될까요? Ensemble과 관련되어 있을까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Residual network에 이용하는 skip connection이 bagging(bootstrap aggregating) 효과를 낼 수 있다.  
+    > 실제로 Residual Network에서 일부 skip connected layer를 제거했을 때, error rate이 smooth하게 올라가는 것을 확인할 수 있다고 한다.  
+    > ![](https://www.dropbox.com/s/6c9q44fw3ww5w4q/residual_network_bootstrap.png?raw=1)
+    
+  </details>
 - CAM(Class Activation Map)은 무엇인가요?
 - Localization은 무엇일까요?
 - 자율주행 자동차의 원리는 무엇일까요?
