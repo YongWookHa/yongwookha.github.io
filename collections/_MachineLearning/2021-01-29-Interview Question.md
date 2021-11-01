@@ -937,6 +937,14 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 - CAM(Class Activation Map)은 무엇인가요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Class action map은 Neural network에서 classification 작업을 수행할 때, discriminative region을 표현한 것이다. discriminative region은 classify 결과에 "결정적인 영향을 미친 영역"을 의미한다.  
+    > 보통, 모델의 마지막 FC 레이어를 Global Average Pooling로 대체하여 Softmax 함수를 통과시켜 이미지의 특정 영역이 각 class에 대해 가지는 가중치를 시각화합니다.  
+    > ![](https://www.dropbox.com/s/vqitb86ie86nb5c/class_activation_map.jpg?raw=1)  
+    
+  </details>
 - Localization은 무엇일까요?
 - 자율주행 자동차의 원리는 무엇일까요?
 - Semantic Segmentation은 무엇인가요?
