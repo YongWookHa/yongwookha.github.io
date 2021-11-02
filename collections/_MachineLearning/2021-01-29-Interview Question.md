@@ -946,6 +946,12 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     
   </details>
 - Localization은 무엇일까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Object Detection에서 검출한 객체의 위치 정보를 예측하는 것을 의미한다. 네트워크의 output vector에 좌표 정보를 출력하게끔 학습할 수 있다.  
+    
+  </details>
 - 자율주행 자동차의 원리는 무엇일까요?
 - Semantic Segmentation은 무엇인가요?
 - Visual Q&A는 무엇인가요?
