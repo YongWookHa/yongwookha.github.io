@@ -215,6 +215,12 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
   </details> 
 - 요즘같은 빅데이터(?)시대에는 정규성 테스트가 의미 없다는 주장이 있습니다. 맞을까요?
+  <details markdown="1">
+  <summary>[답안]</summary>
+  
+  > 중심극한정리에 따라 표본의 수가 충분히 많은 경우, 표본 평균의 분포가 정규 분포를 따르게 된다. 빅데이터 시대에는 표본의 수를 충분히 확보할 수 있는 경우가 많으므로 정규성 테스트의 의미가 퇴색된다.
+
+  </details> 
 - 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
 - “likelihood”와 “probability”의 차이는 무엇일까요?
 - 통계에서 사용되는 bootstrap의 의미는 무엇인가요.
