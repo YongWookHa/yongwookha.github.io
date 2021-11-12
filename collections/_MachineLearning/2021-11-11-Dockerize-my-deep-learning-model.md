@@ -2,7 +2,7 @@
 layout: post
 title: 나의 딥러닝 모델 Dockerize하기
 tags: [STUDY, DEVELOP, MACHINE_LEARNING]
-cover-img: /assets/img/dockerize.jpg
+cover-img: /assets/img/dockerize.png
 comments: true
 ---
 
@@ -10,15 +10,25 @@ comments: true
 
 최근 회사 업무로, 모델 구성이나 학습에 필요한 parameter를 전달받아 학습을 수행하고, 지정된 위치에 결과와 log를 저장하도록 **training** 코드를 Dockerize했던 경험을 기록합니다. 포스트 내용 중에는 꼭 따르지 않아도 되는 규칙(_예를들어 소스코드 패키징 방법 등_)이 있습니다. 감안해주시면 도움이 될 것 같습니다.
 
+<br/>
+
+--- 
+
+<br/>
+
 # 🐳 Dockerize  
 
 로컬에서 개발한 서비스를 [Docker](https://www.docker.com/)를 이용하여 모든 소프트웨어 의존성을 패키징하여 `container`라고 불리는 표준 단위로 제공하는 것을 의미합니다. `container`는 말 그대로 모든 의존성을 contain(포함하다)하고 있는 단위이기 때문에 개발 결과를 매우 범용적으로 release하는 방법입니다.
 
-# 👟 Steps
-
 먼저 내가 개발한 소프트웨어를 `Docker image`로 패키징하여 배포해야합니다. 그러면 이 `Docker image`를 이용하여 `container`를 생성하여 서비스할 수 있습니다. `Docker image`와 `container`는 객체지향 언어에서 class와 instance의 관계라고 생각할 수 있습니다.
 
-## 1. Source code packaging  
+<br/>
+
+--- 
+
+<br/>
+
+## 👟 step1. Source code packaging  
 소스코드 패키징은 여러가지 방법이 있습니다. 보통은 git으로 형상관리를 하지만, 이 포스트에서는 편의상 압축파일로 관리한다고 가정합니다. 특정 버전의 소스코드를 `.tar` 파일로 압축합니다. 
 
 ```
@@ -66,9 +76,15 @@ if __name__ == "__main__":
 ```  
 
 3. `src`내 추가 디렉토리 구성은 자유입니다.  
-4. 모델이 학습 과정에서 생성하는 `checkpoints`와 `tensorboard log`는 `outputs` 폴더에 저장합니다. (추후 volume mount를 위함)
-  
-## 2. Docker Image 생성 (`Dockerfile` 작성)  
+4. 모델이 학습 과정에서 생성하는 `checkpoints`와 `tensorboard log`는 `outputs` 폴더에 저장합니다. (추후 volume mount를 위함)  
+
+<br/>
+
+--- 
+
+<br/>
+
+## 👟step2. Docker Image 생성 (`Dockerfile` 작성)  
 Docker image 빌드를 위해 `Dockerfile`을 작성합니다. 가장 기본이 되는 Image로부터 시작해서, 필요한 의존성을 쌓아 올려 환경을 구축합니다. 자주 사용되는 몇가지 문법에 대해 간단히 설명합니다.
 
 - **`FROM`** : Base가 되는 Docker Image
@@ -105,7 +121,13 @@ Dockerfile을 작성하고 나면, 이를 빌드해서 Image를 생성합니다.
 
 빌드가 성공했다면, `docker images` 명령어를 입력하면 내가 만든 `<my-image-name>`을 찾을 수 있습니다.
 
-## 3. Container 생성 (`docker-compose.yml` 작성)
+<br/>
+
+--- 
+
+<br/> 
+
+## 👟step3. Container 생성 (`docker-compose.yml` 작성)
 
 빌드된 이미지를 이용해서 `container`를 생성합니다. `cli`를 통해 `container`에 필요한 arguments를 직접 입력해주는 방법과, 미리 `docker-compose.yml` 파일에 arguments를 모두 입력해놓고 불러오는 방법이 있습니다. 이 포스트에서는 후자를 다룹니다. 자주 쓰이는 문법은 다음과 같습니다.
 
@@ -144,12 +166,22 @@ services:
 API에서는 모델마다 요구되는 parameter가 다르기 때문에 `command`의 구성이 항상 변합니다. 이에 따라 모델 종류에 따라 docker-compose.yml 파일을 대신 작성하는 helper 함수를 이용하는 것이 좋습니다. helper 함수 예시는 아래와 같습니다.
 
 ```python
-def fill_yaml_command_helper(draft: dict, params: dict) -> None:
+def fill_docker_compose_helper(draft: dict, params: dict) -> None:
     """
+    python script에 전달되는 arguments를 제외한 모든 docker-compose 요소가
+    채워진 상태에서 command에 필요한 arguments를 채워넣어 docker-compose dict를
+    완성시키는 코드
+    
     input:
-        draft: docker-compose basic form
+        draft: 모델의 기본 docker-compose 형식 (command 제외)
+        params: command에 입력될 arguments를 key, value로 구성한 dict
+    output:
+        완성된 docker-compose dict
     """
     def search_command(d: dict, path=[]):
+        """
+        채워넣어야 할 "command"가 어디있는지 찾아주는 helper
+        """
         for k, v in d.items():
             if k == "command":
                 return path
@@ -180,7 +212,13 @@ def fill_yaml_command_helper(draft: dict, params: dict) -> None:
 > docker compose up
 ```
 
+<br/>
+
+--- 
+
+<br/>
+
 # 📑 참조  
-- [Docker Runtime Arguments\. Last night I fell down the rabbit hole… \| by Alex Galea \| Medium](https://galea.medium.com/docker-runtime-arguments-604593479f45)
-- https://docs.docker.com/engine/reference/builder/
-- https://docs.docker.com/compose/compose-file/compose-file-v3/#ulimits
+- [Docker Runtime Arguments\. Last night I fell down the rabbit hole… \| by Alex Galea \| Medium](https://galea.medium.com/docker-runtime-arguments-604593479f45)  
+- [https://docs.docker.com/engine/reference/builder/](https://docs.docker.com/engine/reference/builder/)  
+- [https://docs.docker.com/compose/compose-file/compose-file-v3/#ulimits](https://docs.docker.com/compose/compose-file/compose-file-v3/#ulimits)  
