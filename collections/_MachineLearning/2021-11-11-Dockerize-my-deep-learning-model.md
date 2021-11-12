@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 나의 딥러닝 모델 Dockerize하기
+subtitle: Training Container
 tags: [STUDY, DEVELOP, MACHINE_LEARNING]
 cover-img: /assets/img/dockerize.png
 comments: true
@@ -129,7 +130,35 @@ Dockerfile을 작성하고 나면, 이를 빌드해서 Image를 생성합니다.
 
 ## 👟step3. Container 생성 (`docker-compose.yml` 작성)
 
-빌드된 이미지를 이용해서 `container`를 생성합니다. `cli`를 통해 `container`에 필요한 arguments를 직접 입력해주는 방법과, 미리 `docker-compose.yml` 파일에 arguments를 모두 입력해놓고 불러오는 방법이 있습니다. 이 포스트에서는 후자를 다룹니다. 자주 쓰이는 문법은 다음과 같습니다.
+빌드된 이미지를 이용해서 `container`를 생성합니다. `cli`를 통해 `container`에 필요한 arguments를 직접 입력해주는 `docker run`과, 미리 `docker-compose.yml` 파일에 arguments를 모두 입력해놓고 실행 시 불러오는 `docker compose`가 있습니다. 
+
+### docker run
+
+docker에서 가장 많이 사용하게 되는 `run`에는 다양한 option들이 있습니다. 그 중, 몇가지만 간략하게 확인하자.
+
+- `-v`, `--volume` : [host-src]:[container-dest] 저장 공간 bind
+- `-d`, `--detach` : 백그라운드 실행
+- `-p`, `--port` : [host-port]:[container-port] 포트 포워딩
+- `--rm` : container 상태가 exit이 되면 자동으로 삭제
+
+```bash
+docker run -v [host-src]:/outputs <my-image-name> \
+    "--parameter_name_1" "--parameter_value_1" \
+    "--parameter_name_2" "--parameter_value_2" \
+    ...
+```
+
+python script에 전달할 parameter는 container setting 이후에 string type으로 넘겨줄 수 있습니다.
+
+### docker compose  
+
+아래에서는 `docker-compose.yaml` 파일 작성 자동화에 대한 내용을 다룹니다.
+
+<details>
+<summary>🔽 내용 펼치기</summary>
+<div markdown="1">       
+
+`docker-compose.yml`에서 자주 쓰이는 문법은 다음과 같습니다.
 
 - **`version`** : docker compose version
 - **`services`** :
@@ -211,6 +240,11 @@ def fill_docker_compose_helper(draft: dict, params: dict) -> None:
 ```shell
 > docker compose up
 ```
+
+</div>
+</details>
+
+
 
 <br/>
 
