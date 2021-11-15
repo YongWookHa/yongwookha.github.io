@@ -132,7 +132,7 @@ Dockerfile을 작성하고 나면, 이를 빌드해서 Image를 생성합니다.
 
 빌드된 이미지를 이용해서 `container`를 생성합니다. `cli`를 통해 `container`에 필요한 arguments를 직접 입력해주는 `docker run`과, 미리 `docker-compose.yml` 파일에 arguments를 모두 입력해놓고 실행 시 불러오는 `docker compose`가 있습니다. 
 
-### docker run
+### - docker run
 
 docker에서 가장 많이 사용하게 되는 `run`에는 다양한 option들이 있습니다. 그 중, 몇가지만 간략하게 확인하자.
 
@@ -148,9 +148,11 @@ docker run -v [host-src]:/outputs <my-image-name> \
     ...
 ```
 
+_자세한 option 내용은 [공식 문서](https://docs.docker.com/engine/reference/run/) 참조_
+
 python script에 전달할 parameter는 container setting 이후에 string type으로 넘겨줄 수 있습니다.
 
-### docker compose  
+### - docker compose  
 
 아래에서는 `docker-compose.yaml` 파일 작성 자동화에 대한 내용을 다룹니다.
 
@@ -244,8 +246,6 @@ def fill_docker_compose_helper(draft: dict, params: dict) -> None:
 </div>
 </details>
 
-
-
 <br/>
 
 --- 
@@ -255,4 +255,5 @@ def fill_docker_compose_helper(draft: dict, params: dict) -> None:
 # 📑 참조  
 - [Docker Runtime Arguments\. Last night I fell down the rabbit hole… \| by Alex Galea \| Medium](https://galea.medium.com/docker-runtime-arguments-604593479f45)  
 - [https://docs.docker.com/engine/reference/builder/](https://docs.docker.com/engine/reference/builder/)  
-- [https://docs.docker.com/compose/compose-file/compose-file-v3/#ulimits](https://docs.docker.com/compose/compose-file/compose-file-v3/#ulimits)  
+- [https://docs.docker.com/engine/reference/run/](https://docs.docker.com/engine/reference/run/)  
+- [https://docs.docker.com/compose/compose-file/compose-file-v3/](https://docs.docker.com/compose/compose-file/compose-file-v3/)  
