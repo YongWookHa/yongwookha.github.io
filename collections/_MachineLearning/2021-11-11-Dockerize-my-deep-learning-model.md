@@ -35,6 +35,7 @@ comments: true
 ```
 📦<source-code>.tar
  ┣ 📂outputs
+ ┣ 📂data
  ┣ 📂src
  ┃ ┣ 📜datasets.py
  ┃ ┣ 📜models.py
@@ -77,7 +78,8 @@ if __name__ == "__main__":
 ```  
 
 3. `src`내 추가 디렉토리 구성은 자유입니다.  
-4. 모델이 학습 과정에서 생성하는 `checkpoints`와 `tensorboard log`는 `outputs` 폴더에 저장합니다. (추후 volume mount를 위함)  
+4. `data`에서 데이터를 불러옵니다. runtime에서 volume mount를 통해 데이터에 접근할 수 있습니다.
+5. 모델이 학습 과정에서 생성하는 `checkpoints`와 `tensorboard log`는 `outputs` 폴더에 저장합니다. (추후 volume mount)
 
 <br/>
 
@@ -99,7 +101,7 @@ Docker image 빌드를 위해 `Dockerfile`을 작성합니다. 가장 기본이 
 
 ### 🎨 예시  
 ```dockerfile
-FROM python:3.8.12-slim-buster
+FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-runtime
 
 WORKDIR /
 
@@ -139,10 +141,12 @@ docker에서 가장 많이 사용하게 되는 `run`에는 다양한 option들�
 - `-v`, `--volume` : [host-src]:[container-dest] 저장 공간 bind
 - `-d`, `--detach` : 백그라운드 실행
 - `-p`, `--port` : [host-port]:[container-port] 포트 포워딩
+- `--gpus` : 사용할 gpu 입력 (ex1. '"device=0,2"') (ex2. all)
 - `--rm` : container 상태가 exit이 되면 자동으로 삭제
 
 ```bash
-docker run -v [host-src]:/outputs <my-image-name> \
+docker run --gpus all \
+    -v [host-src]:/outputs <my-image-name> \
     "--parameter_name_1" "--parameter_value_1" \
     "--parameter_name_2" "--parameter_value_2" \
     ...
@@ -163,7 +167,7 @@ python script에 전달할 parameter는 container setting 이후에 string type�
 `docker-compose.yml`에서 자주 쓰이는 문법은 다음과 같습니다.
 
 - **`version`** : docker compose version
-- **`services`** :
+- **`services`** : 서비스 나열
 - **`ports`** : "<HOST>:<CONTAINER>"로 포트를 연결. _string 명시 권장_
 - **`volumes`** : "<HOST>:<CONTAINER>"로 저장 공간 연결
 - **`command`** : container 내부에서 실행될 명령어 지정
@@ -181,6 +185,11 @@ services:
       - "5000:5000"
     volumes:
       - /logs/<my-container-name>:"/outputs"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
     command: 
       - python
       - main.py
