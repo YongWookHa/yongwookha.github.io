@@ -1145,7 +1145,13 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     > 먼저, Generator와 Discriminator를 경쟁시키면서 학습한다는 발상이 흥미롭다. 학습 난이도가 높기 때문에 새로운 학습 전략이 필요했는데, KL-divergence 이후에 JS-divergence, Wasserstein distance 등이 대두되며 기존에 생성 모델으로 주로 이용하던 VAE에 비해 개성 있고 형태적으로 더 다양한 결과를 얻을 수 있게 되었다. 이를 통해 GAN이 생성 모델의 새로운 패러다임으로 떠오르고 있다.
       
   </details>
-- Auto Encoder에 대해서 아는대로 얘기하라
+- Auto Encoder에 대해서 아는대로 얘기하라  
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > Auto Encoder는 데이터를 압축하고 복원하는 과정에서 Encoder와 Decoder를 학습한다. VAE의 경우, 정규 분포를 따르는 `Latent Vector`(잠재벡터)로 원본 데이터의 차원 수를 줄이는 Encoder와 `Latent Vector`로부터 다시 원본 데이터를 복원하는 Decoder를 학습시킨다. 이후, Random한 정규 분포를 생성하여 Decoder에 입력하면 학습 데이터에 존재하지 않는 새로운 데이터를 생성할 수 있다.
+      
+  </details>  
 	- MNIST AE를 TF나 Keras등으로 만든다면 몇줄일까?
 	- MNIST에 대해서 임베딩 차원을 1로 해도 학습이 될까?
 	- 임베딩 차원을 늘렸을 때의 장단점은?
