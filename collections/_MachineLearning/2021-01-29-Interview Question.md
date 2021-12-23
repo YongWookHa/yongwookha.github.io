@@ -1166,14 +1166,27 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
 
 ## 추천 시스템
 - 추천 시스템에서 사용할 수 있는 거리는 무엇이 있을까요?
-<details markdown="1">
+  <details markdown="1">
     <summary>[답안]</summary>
 
     > Recommendation은 주로 top k개의 결과에 대해 평가하는 경우가 많다. Mean Average Precision 또는 Mean Average Recall 등을 이용할 수 있다.
       
   </details>
 - User 베이스 추천 시스템과 Item 베이스 추천 시스템 중 단기간에 빠른 효율을 낼 수 있는 것은 무엇일까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > 활동 정보, 선호 정보를 쌓아야하는 User 베이스 추천 시스템보다는 사전 분석이 가능한 Item의 정보 상관 관계를 이용하는 Item 베이스 추천 시스템이 단기간에 효율을 내기에 적합하다.
+      
+  </details>
 - 성능 평가를 위해 어떤 지표를 사용할까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+
+    > MAP(Mean Average Precision)@K : 상위 K개의 추천 결과 중 정답(추천 적합 상품)이 있는가?  
+    > MAR(Mean Average Recall)@K : 정답(추천 적합 상품)이 상위 K개의 추천 결과들에 얼마나 있는가?   
+      
+  </details>
 - Explicit Feedback과 Implicit Feedback은 무엇일까요? Impicit Feedback을 어떻게 Explicit하게 바꿀 수 있을까요?
 - Matrix Factorization은 무엇인가요? 해당 알고리즘의 장점과 단점은?
 - SQL으로 조회 기반 Best, 구매 기반 Best, 카테고리별 Best를 구하는 쿼리를 작성해주세요
