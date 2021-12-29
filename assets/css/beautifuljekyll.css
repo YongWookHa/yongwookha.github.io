@@ -3,8 +3,8 @@ layout: null
 ---
 
 @import url("pygment_highlights.css");
-@import url("https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Noto+Sans&display=swap");
-@import url("https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 
 /* --- General --- */
 
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'NanumSquareRound', 'Lora', 'Times New Roman', serif;
+  font-family: 'Nanum Gothic', 'Lora', 'Times New Roman', serif;
   font-size: 1.125rem;
   color: {{ site.text-col | default: "#404040" }};
   position: relative;
@@ -126,7 +126,7 @@ img {
 .navbar-custom {
   background-color: {{ site.navbar-col | default: "#EAEAEA" }};
   border-bottom: 1px solid {{ site.navbar-border-col | default: "#DDDDDD" }};
-  font-family: 'NanumSquareRound', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Nanum Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   {% if site.navbar-img %}
     background-image: url({{ site.navbar-img | relative_url }});
     background-attachment: fixed;
@@ -396,7 +396,7 @@ footer .list-inline {
   margin-bottom: 1.875rem;
 }
 footer .copyright {
-  font-family: 'NanumSquareRound', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Nanum Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   margin-bottom: 0;
   margin-top: 0;
@@ -408,7 +408,7 @@ footer .theme-by {
 footer .footer-custom-content {
   text-align: center;
   margin-bottom: 0.9375rem;
-  font-family: 'NanumSquareRound', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Nanum Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -446,7 +446,7 @@ footer .footer-custom-content {
 
 .post-preview a {
   text-decoration: none;
-  font-family: 'NanumSquareRound', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Nanum Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: {{ site.text-col | default: "#404040" }};
 }
 
@@ -471,7 +471,7 @@ footer .footer-custom-content {
   font-size: 1.125rem;
   font-style: italic;
   margin: 0 0 0.625rem;
-  font-family: 'NanumSquareRound', 'Lora', 'Times New Roman', serif;
+  font-family: 'Nanum Gothic', 'Lora', 'Times New Roman', serif;
 }
 .post-heading .post-meta {
   display: inline-block;
@@ -548,7 +548,7 @@ footer .footer-custom-content {
 /* --- Tags --- */
 
 .blog-tags {
-  font-family: 'NanumSquareRound', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Nanum Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.9375rem;
   margin: 1.875rem 0;
 }
@@ -591,7 +591,7 @@ footer .footer-custom-content {
 }
 
 #full-tags-list {
-  font-family: 'NanumSquareRound', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Nanum Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #full-tags-list .tag-entry {
@@ -782,7 +782,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 }
 
 .pagination .page-item .page-link {
-  font-family: 'NanumSquareRound', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Nanum Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 800;
