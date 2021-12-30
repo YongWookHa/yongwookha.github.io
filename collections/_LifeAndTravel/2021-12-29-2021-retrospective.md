@@ -53,14 +53,15 @@ comments: true
 
 ### 성장하고 있다는 느낌
 
-- 조직이 공인하는 Engineering Careere Framework이 없는 경우, 나의 커리큘럼을 내가 설정하는 것은 정말 중요한 일.
-- 무턱대고 다른 조직의 Engineering Career Framework를 따라 레벨업을 시도해보는 것도 가만히 정체되는 것보다는 분명 나은 일이겠지만, 혼자 하다보면 중간에 김이 빠질 확률이 높을 것 같다.
+- 조직이 공인하는 Engineering Career Framework이 없는 경우, 나의 커리큘럼을 내가 설정하는 것은 정말 중요한 일.
+- 무턱대고 다른 조직의 Engineering Career Framework를 따라 레벨업을 시도해보는 것도 아무것도 하지 않는 것보단 분명 낫겠지만, 혼자 하다보면 중간에 김이 빠질 확률이 높을 것 같다.
 - `정체=불안`인 나에게 뭔가 하고 있다는 느낌을 지속적으로 받는 것은 중요하다.
   - 2020년에는 팀 프로젝트였고, 2021년에는 논문 구현과 Github이었다.
   - 사업 구상을 하며 딥러닝 Audio 분야 논문도 읽고 [openspeech](https://github.com/openspeech-team/openspeech)코드도 많이 뜯어봤다.
   - 그래도 혼자 공부하고 끝나는 것 보다는 뭔가 기록으로 남는게 중요한 것 같다. 블로그 포스트라도 남기고, 하다못해 [Github profile](https://github.com/YongWookHa)에 commit 내역이라도 남기고.
 - 가끔은 이런 불안이 스트레스로 다가올 때도 있다.
   - 명상으로 달래거나 내 Repository에서 별거 아닌 결점이라도 찾아서 수정 후 commit한다. (commit map에 초록색 점이 박히는게 그래도 위안이 된다.)
+    ![](https://www.dropbox.com/s/qmrmkw2re744pir/github_contribution_2021.png?raw=1)
 
 <br/>
 
@@ -117,16 +118,16 @@ comments: true
 
 ### 여행
 
-- 2021년 내내 눈을 고정하고 걸음을 내딛었던 깃발이자 목표.
+- 2021년 내내 떠올리며 하루하루 삶의 원동력이 되던 깃발이자 목표!
   - 아내와 2022년 2분기부터 Gap-Year를 가지기로 함.
   - 약 1년동안 지구 한바퀴 돌 예정!
     ![](https://www.dropbox.com/s/hjza0zdwz1otg6f/travel_2022_world_map.png?raw=1)
 - 바쁘게 여행지 정하고, 공부하고, 계획 세우면서 스트레스도 풀고 심심할 틈이 없었음.  
-  - 조사한 자료들을 [Notion](https://www.notion.so/ko-kr)에 정리하면서 Notion에서 제공하는 기본적인 Text Editting 기능을 넘어서서 Database기반의 고급 기능들을 자주 쓸 수 있었음. 자료들이 꽤 체계적으로 정리되고 있음. 여행하면서 workspace를 충분히 완성하게 되면 이걸 수익화 할 수 있는 방법을 찾아보고 싶음.
+  - 조사한 자료들을 [Notion](https://www.notion.so/ko-kr)에 정리하면서 Notion에서 제공하는 기본적인 Text Editting 기능을 넘어서서 Database기반의 고급 기능들을 자주 쓸 수 있었음. 자료들이 꽤 체계적으로 정리되고 있음. 여행하면서 workspace를 충분히 완성하게 되면 이걸 판매하거나 수익화 할 수 있는 방법을 찾아볼 예정.
   ![](https://www.dropbox.com/s/c653w1x9eng5kg8/travel_2022_notion_1.png?raw=1)
-- 여행하면서 유튜브 채널도 운영할 생각. 채널명은.. 미정.
+- 여행하면서 유튜브 채널도 운영할 생각. 채널명은... 미정
 - 커리어적으로 몽땅 비어버리는 한 해를 보내기는 조금 걱정이 된다.
-  -  [Coursera](https://www.coursera.org/)에서 강의를 듣고 Certification을 따고
+  -  [Coursera](https://www.coursera.org/)에서 강의를 듣고 Certification이나 모아볼까?
   -  [Kmong](https://kmong.com)에서 프리랜서를 하기로 함.
 - 인생의 터닝포인트가 되길.
 
