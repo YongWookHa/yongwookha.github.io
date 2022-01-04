@@ -1183,11 +1183,19 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
   <details markdown="1">
     <summary>[답안]</summary>
 
-    > MAP(Mean Average Precision)@K : 상위 K개의 추천 결과 중 정답(추천 적합 상품)이 있는가?  
-    > MAR(Mean Average Recall)@K : 정답(추천 적합 상품)이 상위 K개의 추천 결과들에 얼마나 있는가?   
+    > MRR(Mean Reciprocal Rank)@K : 상위 K개의 추천 결과 중, 정답(추천 적합 상품)이 처음 등장하는 
+    > MAP(Mean Average Precision)@K : 상위 K개의 추천 결과 중, 정답(추천 적합 상품)이 있는 평균 비율  
+    > MAR(Mean Average Recall)@K : 정답(추천 적합 상품) 중, 상위 K개의 추천 결과에 의해 예측된 평균 비율  
       
   </details>
 - Explicit Feedback과 Implicit Feedback은 무엇일까요? Impicit Feedback을 어떻게 Explicit하게 바꿀 수 있을까요?
+  <details markdown="1">
+    <summary>[답안]</summary>
+    Explicit Feedback : 유저로부터 선호도를 직접적으로 수집하여 반영하는 방법.(좋아요, 리뷰, 구독, 차단 등) 유저의 의사가 적극적으로 반영된 데이터이므로 높은 신뢰도와 강력한 영향력을 가지지만, 수집 난이도가 높다.
+    Implicit Feedback : 유저의 행동으로부터 선호도를 간접적으로 수집하여 반영하는 방법. (검색 기록, 방문 페이지, 페이지 체류 기간, 구매내역 등) 수집 난이도가 낮아 동원할 수 있는 데이터의 양은 많지만, 데이터에 노이즈가 많고 분석 방법에 따라 해석 결과의 차이가 생길 수 있다.
+
+    _참조: [https://orill.tistory.com/entry/Explicit-vs-Implicit-Feedback-Datasets](https://orill.tistory.com/entry/Explicit-vs-Implicit-Feedback-Datasets)_
+  </details>
 - Matrix Factorization은 무엇인가요? 해당 알고리즘의 장점과 단점은?
 - SQL으로 조회 기반 Best, 구매 기반 Best, 카테고리별 Best를 구하는 쿼리를 작성해주세요
 - 추천 시스템에서 KNN 알고리즘을 활용할 수 있을까요?
