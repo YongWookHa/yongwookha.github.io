@@ -1197,6 +1197,15 @@ Answer by [YongWook Ha](https://github.com/YongWookHa)
     _참조: [https://orill.tistory.com/entry/Explicit-vs-Implicit-Feedback-Datasets](https://orill.tistory.com/entry/Explicit-vs-Implicit-Feedback-Datasets)_
   </details>
 - Matrix Factorization은 무엇인가요? 해당 알고리즘의 장점과 단점은?
+  <details markdown="1">
+    <summary>[답안]</summary>
+    Matrix Factorization는 `User x Item` Matrix를 `User x Latent`, `Item x Latent`로 분리하는 방법을 ML로 학습하는 방법. `Latent` 값을 조정하면서 Gradient Descent로 학습한다.
+
+    장점: Latent Factor의 개수를 다양하게 실험하면서 유연한 관점에서의 데이터 해석이 가능하다.
+    단점: ML 방식으로 구현되므로 결과에 대한 해석이 불가하다. 각 Latent Factor의 의미에 대한 해석이 어렵다.
+
+    _참조: [https://wooono.tistory.com/149](https://wooono.tistory.com/149)_
+  </details>
 - SQL으로 조회 기반 Best, 구매 기반 Best, 카테고리별 Best를 구하는 쿼리를 작성해주세요
 - 추천 시스템에서 KNN 알고리즘을 활용할 수 있을까요?
 - 유저가 10만명, 아이템이 100만개 있습니다. 이 경우 추천 시스템을 어떻게 구성하시겠습니까?
