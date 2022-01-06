@@ -31,44 +31,46 @@ subtitle: 💻 Machine Learning Engineer
 
 > [Go to the notion page and see](https://www.notion.so/HA-YongWook-ce8168866b2f44d886452457bfef689b)    
 
-#### - @PNU
-- **Graduation Project (2016)**  
-    <details markdown="1">
-    <summary>Consumer Appearance Analysis using CNN and Product Recommendation</summary>
-    > [Link to the detail Page](https://docs.google.com/document/d/1qZqBvD-krvwL3C6pupa9SHBwrXVaOJpDew5K0vDpO1s/edit)  
-    > ![](https://github.com/YongWookHa/yongwookha.github.io/blob/master/graduation_project.png?raw=true)
-    >  My role in this project   
-    >   ~ Implementing convolutional neural network by CAFFE framework  
-    >   ~ Implementing decision making tree using C4.5 algorithm 
+#### - @PNU  
+<details markdown="1">
+  - **Graduation Project (2016)**  
+      <details markdown="1">
+      <summary>Consumer Appearance Analysis using CNN and Product Recommendation</summary>
+      > [Link to the detail Page](https://docs.google.com/document/d/1qZqBvD-krvwL3C6pupa9SHBwrXVaOJpDew5K0vDpO1s/edit)  
+      > ![](https://www.dropbox.com/s/cxoivcvo9qzwrk3/Graduation%20Project.png?raw=1)
+      >  My role in this project   
+      >   1\. Implementing convolutional neural network by CAFFE framework  
+      >   2\. Implementing decision making tree using C4.5 algorithm 
+
+      </details>
+
+  - **National Research Project**  
+      <details markdown="1">
+      <summary>Tracking Underwater object and Clustering behavior patterns by SOM</summary>
+      > ![](https://user-images.githubusercontent.com/12293076/51790000-eb893f80-21d2-11e9-8cbb-85a5e7caf225.png)  
+      > My role in this project  
+      > 1\. Implementing object tracking algorithm using Kalman-filter concept  
+      > 2\. Implementing self-organizing map for clustering of object behavior
+
+      </details>
+
+  - **Master's Thesis**  
+      <details markdown="1">
+      <summary>Photo-Realistic Image Generation Using Variational AutoEncoder and Neural Network based Super-Resolution</summary>
+      > [Link to the detail Page](https://yongwookha.github.io/hayongwook-masterpaper/)  
+      > generated faces 🔽  
+      > ![](https://user-images.githubusercontent.com/12293076/50125807-bd4c4200-02ad-11e9-9112-960302aab16d.png)  
+      </details>
+
+  - **Presonal Toy Project**  
+      <details markdown="1">
+      <summary>Dance like Bruno Mars using Style Transfer</summary>  
+      > [Link to the detail Page](https://github.com/YongWookHa/pose2pose)  
+      > [![pose2pose-demo](http://img.youtube.com/vi/Nc0LNrzDeXQ/0.jpg)](https://youtu.be/Nc0LNrzDeXQ) 
 
     </details>
 
-- **National Research Project**  
-    <details markdown="1">
-    <summary>Tracking Underwater object and Clustering behavior patterns by SOM</summary>
-    > ![](https://user-images.githubusercontent.com/12293076/51790000-eb893f80-21d2-11e9-8cbb-85a5e7caf225.png)  
-    > My role in this project  
-    > ~ Implementing object tracking algorithm using Kalman-filter concept  
-    > ~ Implementing self-organizing map for clustering of object behavior
-
-    </details>
-
-- **Master's Thesis**  
-    <details markdown="1">
-    <summary>Photo-Realistic Image Generation Using Variational AutoEncoder and Neural Network based Super-Resolution</summary>
-    > [Link to the detail Page](https://yongwookha.github.io/hayongwook-masterpaper/)  
-    > ![](https://github.com/YongWookHa/yongwookha.github.io/blob/master/generated_faces.png?raw=true) 
-    > generated faces 
-
-    </details>
-
-- **Presonal Toy Project**  
-    <details markdown="1">
-    <summary>Dance like Bruno Mars using Style Transfer</summary>
-    [Link to the detail Page](https://github.com/YongWookHa/pose2pose)  
-    > [![pose2pose-demo](http://img.youtube.com/vi/Nc0LNrzDeXQ/0.jpg)](https://youtu.be/Nc0LNrzDeXQ) 
-
-    </details>
+</details>
 
 ### 🏆 Awards  
 * 2nd Prize @ Creative Promotional Video Contest for Ireland -by Ireland Embassy in S.Korea  
