@@ -29,6 +29,38 @@ comments: true
 
 <br/>
 
+# 📥 Install
+
+[docker](https://sli.dev/guide/install.html#install-globally)로 실행할 수도 있지만, `npm`을 이용하는게 조금 더 간편합니다.
+
+```bash
+# slidev global 설치
+> npm i -g @slidev/cli
+
+# slides.md가 있는 디렉토리에서
+> slidev
+
+# 또는
+> npx slidev
+```
+
+이제 브라우저로 접속해서 hot reload되는 슬라이드를 확인할 수 있습니다.
+
+> 😅 Trouble Shooting
+> ```
+> > npm install @slidev/cli @slidev/theme-default
+> ```
+> 위 명령어를 통해 local에 `node_modules` 폴더가 설치되면 아래와 같이 폴더를 설정하고 해당 폴더 아래에서 `slidev` 명령어로 `slides.md`를 생성할 수 있습니다.
+> ```
+> .
+> ├── node_modules
+> ├── project-1/
+> │   └── slides.md
+> └── project-2/
+>     └── slides.md
+> ```
+
+
 # 📚 Layout
 
 각 슬라이드는 layout을 지정해주는 것으로 나뉩니다. 아래와 같이 `layout` 속성을 먼저 지정해주고, 각 속성마다 필요한 추가 정보를 기입해줍니다.
