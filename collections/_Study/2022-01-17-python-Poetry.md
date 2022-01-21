@@ -9,7 +9,7 @@ comments: true
 
 최근에는 내가 다루는 거의 모든 프로젝트가 Python 기반이다 보니, 접하게 되는 라이브러리도 정말 다양하다. 그동안 [anaconda](https://www.anaconda.com/)를 통해 개발 과정에서의 dependencies를 관리했었는데, 개인 프로젝트에서는 크게 문제 없었지만 아무래도 pip과 conda를 혼용해서 패키지를 설치하다보니, 팀 프로젝트 운영에서 패키지의 버전 관리 및 공유가 매끄럽지는 못했다.
 
-[Poetry](https://python-poetry.org/)는 각 프로젝트별로 완전히 격리된 개발 환경을 구성하고, 사용되는 패키지의 버전을 파일에 명시하는 것으로 확실한 의존성 관리를 가능케한다.
+[Poetry](https://python-poetry.org/)는 각 프로젝트별로 완전히 격리된 개발 환경을 구성하고, 사용되는 패키지의 버전을 파일에 명시하는 것으로 확실한 의존성 관리를 가능케한다. 개발 뿐만 아니라 빌드(`Build`)와 배포(`Publish`)까지 지원하기 때문에 유용하다. 본 포스트에서는 dev에 관련한 poetry 기능 일부만을 다룬다.
 
 포스팅 내용은 poetry의 [official documents](https://python-poetry.org/docs)를 기준으로 작성했다.
 
@@ -181,5 +181,11 @@ poetry install --without test,docs
 poetry install --sync
 ```
 
+`install` 명령어를 통해 로컬에 패키지를 설치하면 `poetry.lock` 파일이 생성된다. `install`를 명령하면 poetry는 `pyproject.toml`를 참조해서 조건을 어기지 않는 최신 버전의 패키지를 설치하는데, 그 때 설치되는 정확한 버전이 `poetry.lock` 파일에 입력된다.
+
+만약 디렉토리에 `poetry.lock` 파일이 있는 상태에서 `install`을 시도하면 최신 버전 대신 `poetry.lock`에 적혀 있는 특정 버전의 패키지들을 설치하게 된다. 따라서 `poetry.lock`을 repository에 commit 하려면, 정확한 의도를 가지고 있어야 한다.
+
 ## `poetry update`
+
+`poetry.lock`을 최신 버전으로 업데이트하기 위해서 사용한다.
 
