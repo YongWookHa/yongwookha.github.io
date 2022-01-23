@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Poetry
-subtitle: python packaging and dependency management
+subtitle: 파이썬 패키지, 의존성 관리 도구
 tags: [DEVELOP, STUDY]
 cover-img: /assets/img/poetry.png
 comments: true
@@ -13,7 +13,10 @@ comments: true
 
 포스팅 내용은 poetry의 [official documents](https://python-poetry.org/docs)를 기준으로 작성했다.
 
-## Install
+---
+<br/>
+
+## Poetry 설치
 
 1. python 설치  
    이용하고자 하는 python의 버전을 특정하여 설치한다. 나는 3.9.10버전을 개발 표준으로 프로젝트를 생성했다.  
@@ -41,7 +44,10 @@ comments: true
 4. tab completion (linux)
     [enable-tab-completion-for-bash-fish-or-zsh](https://python-poetry.org/docs/master/#enable-tab-completion-for-bash-fish-or-zsh)
 
-## Configuration
+---
+<br/>
+
+## `poetry config`
 
 프로젝트를 생성하기 전에 Peotry에서 지원하는 설정값들을 확인해보자.
 
@@ -67,6 +73,9 @@ poetry config virtualenvs.in-project true
 ```
 
 각 설정값에 대한 자세한 설명은 [available-settings](https://python-poetry.org/docs/master/configuration/#available-settings) 문서를 참조하자. 
+
+---
+<br/>
 
 ## Project setup
 
@@ -157,7 +166,10 @@ build-backend = "poetry.core.masonry.api"
 
 이외에, github 주소와 브랜치를 이용하는 `git` dependencies나 로컬 `path`, 라이브러리 파일의 주소를 이용하는 `url`을 지원한다. 이외에도 파이썬 버전에 따른 버전 나누기 등의 다양한 방식의 versioning을 지원한다.
 
-## Run
+---
+<br/>
+
+## `poetry run` & `poetry shell`
 
 격리된 virtual environment로 스크립트를 실행하는 방법은 `poetry run`으로 1회성 실행 방법과 `poetry shell`을 이용해서 shell을 생성하는 방법이 있다. 
 
@@ -170,13 +182,16 @@ poetry run pytest
 poetry shell
 ```
 
+---
+<br/>
+
 ## `poetry install`
 
 `pyproject.toml`에 적혀있는 dependency를 설치할 때는 `poetry install`를 이용한다. `--only` 옵션으로 특정 패키지만 설치하거나 `--without` 옵션으로 특정 패키지는 설치하지 않을 수도 있다. `--sync` 옵션은 `pyproject.toml`에 맞게 최신화할 때 사용한다. 이외에도 여러 [옵션들](https://python-poetry.org/docs/master/cli/#options-1)이 있다.
 
 ```bash
 poetry install
-poetry isntall --only test,docs
+poetry install --only test,docs
 poetry install --without test,docs
 poetry install --sync
 ```
@@ -184,6 +199,9 @@ poetry install --sync
 `install` 명령어를 통해 로컬에 패키지를 설치하면 `poetry.lock` 파일이 생성된다. `install`를 명령하면 poetry는 `pyproject.toml`를 참조해서 조건을 어기지 않는 최신 버전의 패키지를 설치하는데, 그 때 설치되는 정확한 버전이 `poetry.lock` 파일에 입력된다.
 
 만약 디렉토리에 `poetry.lock` 파일이 있는 상태에서 `install`을 시도하면 최신 버전 대신 `poetry.lock`에 적혀 있는 특정 버전의 패키지들을 설치하게 된다. 따라서 `poetry.lock`을 repository에 commit 하려면, 정확한 의도를 가지고 있어야 한다.
+
+---
+<br/>
 
 ## `poetry update`
 
