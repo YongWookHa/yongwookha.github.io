@@ -125,7 +125,7 @@ Document를 insert할 때, `_id`를 별도 입력하지 않는다면 mongoDB가 
 Pymongo에서는 **R**ead를 위해 `find` method를 이용한다.
 
 - find  
-    조건(filter) 검색에서 match되는 모든 결과를 이용하려면 [`find()`](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection)를 사용한다. 결과는 [`Cursor`](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection) instance.  
+    조건(filter) 검색에서 match되는 모든 결과를 이용하려면 [`find()`](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection.Collection.find)를 사용한다. 결과는 [`Cursor`](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection) instance.  
     ```python
     for match_result in collection.find({"hello": "world"}):
         # do something with match_result
