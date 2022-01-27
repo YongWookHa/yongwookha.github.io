@@ -60,5 +60,23 @@ lspci | grep -i VGA  # GPU 확인
 
 ## 📥 Download  
 ```bash
-curl -O <url to download>
+# web
+curl -O <URL>
+
+# FTP
+curl -u <FTP_USERNAME>:<FTP_PASSWORD> <ftp://<HOST>:<PORT>/<FILE_DIR>
+```  
+
+> - curl <url> : url의 소스코드 출력  
+> - curl -o <filename> <url> : <url>의 소스코드를 <filename> 이름으로 로컬에 저장
+> - curl -O <url> : <url>의 소스코드를 원래 이름으로 로컬에 저장
+
+## 📤 Upload
+```bash
+curl -T <LOCAL_FILE> -u <FTP_USERNAME>:<FTP_PASSWORD> <ftp://<HOST>:<PORT>/<FILE_DIR>
+```  
+
+## ⚡ API TEST  
+```bash
+curl -F "image=@image.png" http://127.0.0.1:5000/api/v1/
 ```
