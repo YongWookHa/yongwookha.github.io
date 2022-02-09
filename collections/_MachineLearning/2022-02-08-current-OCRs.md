@@ -7,15 +7,13 @@ comments: true
 mathjax: true
 ---
 
-이번 포스트에서는 최근의 OCR 분야의 최신 동향을 알아보고 정리해보려고 한다.
+이번 포스트에서는 최근의 OCR 분야의 최신 동향을 알아보고 정리해보려고 한다. 전통적으로, OCR 분야는 대상에 따라 두 개의 영역으로 나누어져 왔다. 최근에는 Deep Learning 기반의 모델들이 SOTA 리스트를 거의 장악하게 되면서 대상간 방법론의 차이가 거의 없어지는 추세이며, Structured text의 경우 LaTeX 태그들을 포함하여 결과를 내도록 학습하는 차이가 있다.
 
-전통적으로, OCR 분야는 대상에 따라 두 개의 영역으로 나누어져 왔다. 최근에는 Deep Learning 기반의 모델들이 SOTA 리스트를 거의 장악하게 되면서 대상간 방법론의 차이가 거의 없어지는 추세이며, Structured text의 경우 LaTeX 태그들을 포함하여 결과를 내도록 학습하는 차이가 있다.
-
-## Structured Text  
+- **Structured Text**  
   ![](https://www.dropbox.com/s/pkqwdozwea48ujy/structured_text.png?raw=1)  
   통제되는 환경에서 촬영된 인쇄체와 필기체 또는 Structured text on document를 대상으로 하는 OCR
 
-## Unstructured Text  
+- **Unstructured Text**  
   ![](https://www.dropbox.com/s/2yqgro8gcac0eef/unstructured_text.png?raw=1)  
   야외를 포함한 일반 이미지. General한 환경에서 촬영된 이미지에 출현하는 텍스트를 대상으로 하는 OCR
 
