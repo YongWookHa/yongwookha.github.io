@@ -11,11 +11,7 @@ comments: true
 
 최근 회사 업무로, 모델 구성이나 학습에 필요한 parameter를 전달받아 학습을 수행하고, 지정된 위치에 결과와 log를 저장하도록 **training** 코드를 Dockerize했던 경험을 기록합니다. 포스트 내용 중에는 꼭 따르지 않아도 되는 규칙(_예를들어 소스코드 패키징 방법 등_)이 있습니다. 감안해주시면 도움이 될 것 같습니다.
 
-<br/>
-
 --- 
-
-<br/>
 
 # 🐳 Dockerize  
 
@@ -23,11 +19,7 @@ comments: true
 
 먼저 내가 개발한 소프트웨어를 `Docker image`로 패키징하여 배포해야합니다. 그러면 이 `Docker image`를 이용하여 `container`를 생성하여 서비스할 수 있습니다. `Docker image`와 `container`는 객체지향 언어에서 class와 instance의 관계라고 생각할 수 있습니다.
 
-<br/>
-
 --- 
-
-<br/>
 
 ## 👟 step1. Source code packaging  
 소스코드 패키징은 여러가지 방법이 있습니다. 보통은 git으로 형상관리를 하지만, 이 포스트에서는 편의상 압축파일로 관리한다고 가정합니다. 특정 버전의 소스코드를 `.tar` 파일로 압축합니다. 
@@ -81,11 +73,7 @@ if __name__ == "__main__":
 4. `data`에서 데이터를 불러옵니다. runtime에서 volume mount를 통해 데이터에 접근할 수 있습니다.
 5. 모델이 학습 과정에서 생성하는 `checkpoints`와 `tensorboard log`는 `outputs` 폴더에 저장합니다. (추후 volume mount)
 
-<br/>
-
 --- 
-
-<br/>
 
 ## 👟step2. Docker Image 생성 (`Dockerfile` 작성)  
 Docker image 빌드를 위해 `Dockerfile`을 작성합니다. 가장 기본이 되는 Image로부터 시작해서, 필요한 의존성을 쌓아 올려 환경을 구축합니다. 자주 사용되는 몇가지 문법에 대해 간단히 설명합니다.
@@ -124,11 +112,7 @@ Dockerfile을 작성하고 나면, 이를 빌드해서 Image를 생성합니다.
 
 빌드가 성공했다면, `docker images` 명령어를 입력하면 내가 만든 `<my-image-name>`을 찾을 수 있습니다.
 
-<br/>
-
 --- 
-
-<br/> 
 
 ## 👟step3. Container 생성 (`docker-compose.yml` 작성)
 
@@ -255,11 +239,7 @@ def fill_docker_compose_helper(draft: dict, params: dict) -> None:
 </div>
 </details>
 
-<br/>
-
 --- 
-
-<br/>
 
 # 📑 참조  
 - [Docker Runtime Arguments\. Last night I fell down the rabbit hole… \| by Alex Galea \| Medium](https://galea.medium.com/docker-runtime-arguments-604593479f45)  

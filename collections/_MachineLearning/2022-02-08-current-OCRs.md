@@ -18,7 +18,6 @@ mathjax: true
   야외를 포함한 일반 이미지. General한 환경에서 촬영된 이미지에 출현하는 텍스트를 대상으로 하는 OCR
 
 ---
-<br/>
 
 # 국내 기업 동향
 
@@ -38,7 +37,6 @@ Clova AI에서 서비스되는 [DEMO](https://clova.ai/ocr)는 Clova AI에서 �
   [Github-Repository](https://github.com/clovaai/deep-text-recognition-benchmark) / [Paper](https://arxiv.org/abs/1904.01906)  
   검출된 텍스트의 인식을 위해 모델들을 조합하여 객관적인 Benchmark 방법을 제안함. TPS+ResNet+BiLSTM+CTC 조합이 가장 우수함.
 
-<br/>
 
 ## 🚩 Kakao
 
@@ -67,7 +65,6 @@ Clova AI에서 서비스되는 [DEMO](https://clova.ai/ocr)는 Clova AI에서 �
   다양한 loss를 이용해서 학습함. `Supervised`, `Contrastive Learning`, `Semi-supervised Learning`을 혼용함.
 
 ---
-<br/>
 
 #  해외 기업 동향
 
@@ -79,7 +76,6 @@ Clova AI에서 서비스되는 [DEMO](https://clova.ai/ocr)는 Clova AI에서 �
 
 이외에도 구글은 [Vision-Transformer](https://arxiv.org/abs/2010.11929)등을 통해 Vision Task에서 Attention을 이용하려는 움직임을 보여오고 있으며, 이는 OCR에도 적용되고 있을 것으로 보인다.
 
-<br/>
 
 ## 🚩 Microsoft
 
@@ -98,7 +94,6 @@ Document OCR에서는 `readingOrder`와 같은 옵션으로 위의 이미지와 
 Meta는 별도의 OCR 서비스를 오픈하지는 않았지만, 지속적으로 관련 연구 논문을 내고 있다. 2021년 Facebook AI Research 팀에서 발표한 [TextOCR](https://research.facebook.com/publications/textocr-towards-large-scale-end-to-end-reasoning-for-arbitrary-shaped-scene-text/)에서는 Scene Text 대상 End-to-End 모델에서 활용 가능한 새로운 학습 방법을 제시했다. 논문에 따르면, `image`-`text region`-`text`-`QA`로 구성된 TextVQA data를 이용하여 multi-modal으로 학습한 경우, 같은 모델을 이용했을 때 최대 20%의 성능 향상을 거둘 수 있다.
 
 ---
-<br/>
 
 # Open-Source 진영  
 
@@ -117,7 +112,6 @@ Meta는 별도의 OCR 서비스를 오픈하지는 않았지만, 지속적으로
 5. 단어 사전과 인식 결과 비교하며 Post Processing
 6. 결과 도출
 
-<br/>
 
 ## 🚩 EasyOCR  
 
@@ -145,7 +139,6 @@ Meta는 별도의 OCR 서비스를 오픈하지는 않았지만, 지속적으로
 > 참조 : [EasyOCR.readtext()](https://github.com/JaidedAI/EasyOCR/blob/048e8ecb52ace84fb344be6c0ca847340816dfff/easyocr/easyocr.py#L374)
 
 ---  
-<br/>
 
 # Techniques  
 
@@ -163,7 +156,6 @@ _참조: [https://jamiekang.github.io/2017/05/27/spatial-transformer-networks/](
 
 Module Layer가 추가되는 만큼, GPU에서 연산해야할 Parameter의 양도 늘어난다. 성능-리소스 간의 trade-off가 발생한다.
 
-<br/>
 
 ## 🚩 Post-OCR Processing Techniques 
 
@@ -203,7 +195,6 @@ Error case에 대한 통계 데이터를 보유하고 있는 경우, 적용해�
 > [https://hal.archives-ouvertes.fr/hal-02304334/document](https://hal.archives-ouvertes.fr/hal-02304334/document)
 
 ---  
-<br/>
 
 # Datasets
 
