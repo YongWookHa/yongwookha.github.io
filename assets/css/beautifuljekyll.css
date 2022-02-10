@@ -26,7 +26,7 @@ body {
 }
 p {
   line-height: 1.5;
-  margin: 1.875rem 0;
+  margin: 1.65rem 0;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Nanum Myeongjo', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -34,19 +34,20 @@ h1,h2,h3,h4,h5,h6 {
   line-height: 1.1;
 }
 h1 {
-  font-size: 2.25rem;
+  margin-top: 5rem;
+  font-size: 2.7rem;
 }
 h2 {
-  font-size: 1.875rem;
+  margin-top: 3rem;
+  font-size: 2.1em;
 }
 h3 {
-  font-size: 1.5rem;
+  margin-top: 2.2rem;
+  font-size: 1.9rem;
 }
 h4 {
-  font-size: 1.125rem;
-}
-h1, h2, h3, h4 {
-  margin-top: 1.25rem;
+  margin-top: 2.1rem;
+  font-size: 1.7rem;
 }
 a {
   color: {{ site.link-col | default: "#008AFF" }};
