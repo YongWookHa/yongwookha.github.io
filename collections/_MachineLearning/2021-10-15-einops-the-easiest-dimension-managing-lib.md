@@ -26,8 +26,6 @@ Tesla에서 활약하고 있는 Andrej Karpathy도 언급한 적이 있다니 �
 각설하고, einops의 사용법에 대해 간단히 알아봅니다.
 
 ---
-<br/>
-
 
 # ✍einops API  
 ## Operation  

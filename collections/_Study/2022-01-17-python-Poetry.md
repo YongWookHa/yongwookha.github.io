@@ -14,7 +14,6 @@ comments: true
 포스팅 내용은 poetry의 [official documents](https://python-poetry.org/docs)를 기준으로 작성했다.
 
 ---
-<br/>
 
 ## Poetry 설치
 
@@ -45,7 +44,6 @@ comments: true
     [enable-tab-completion-for-bash-fish-or-zsh](https://python-poetry.org/docs/master/#enable-tab-completion-for-bash-fish-or-zsh)
 
 ---
-<br/>
 
 ## `poetry config`
 
@@ -75,7 +73,6 @@ poetry config virtualenvs.in-project true
 각 설정값에 대한 자세한 설명은 [available-settings](https://python-poetry.org/docs/master/configuration/#available-settings) 문서를 참조하자. 
 
 ---
-<br/>
 
 ## Project setup
 
@@ -167,7 +164,6 @@ build-backend = "poetry.core.masonry.api"
 이외에, github 주소와 브랜치를 이용하는 `git` dependencies나 로컬 `path`, 라이브러리 파일의 주소를 이용하는 `url`을 지원한다. 이외에도 파이썬 버전에 따른 버전 나누기 등의 다양한 방식의 versioning을 지원한다.
 
 ---
-<br/>
 
 ## `poetry run` & `poetry shell`
 
@@ -183,7 +179,6 @@ poetry shell
 ```
 
 ---
-<br/>
 
 ## `poetry install`
 
@@ -201,7 +196,6 @@ poetry install --sync
 만약 디렉토리에 `poetry.lock` 파일이 있는 상태에서 `install`을 시도하면 최신 버전 대신 `poetry.lock`에 적혀 있는 특정 버전의 패키지들을 설치하게 된다. 따라서 `poetry.lock`을 repository에 commit 하려면, 정확한 의도를 가지고 있어야 한다.
 
 ---
-<br/>
 
 ## `poetry update`
 

@@ -27,7 +27,6 @@ comments: true
 | 공식 tutorial | [https://sli.dev/guide/](https://sli.dev/guide/) |
 | stackblitz에서 직접 해보기 | [![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://sli.dev/new) |
 
-<br/>
 
 # 📥 Install
 
@@ -92,7 +91,6 @@ _참조 : [https://sli.dev/builtin/layouts.html](https://sli.dev/builtin/layouts
 | image | 이미지를 메인 컨텐츠로 배치 |
 | end | ppt 종료 |
 
-<br/>
 
 # 🎓 수식 적용
 
@@ -120,13 +118,11 @@ block:
 
 _참조: [https://sli.dev/custom/config-katex.html](https://sli.dev/custom/config-katex.html)_
 
-<br/>
 
 # 🎨 이미지 크기 조정
 
 아직 완성되지 않은 프로젝트라 그런지 이미지의 크기가 너무 크거나 작게 표현되는 경우가 잦았습니다. 그럴때는 보통 markdown에서 이미지를 입력하는 `![image-name](image-src)` 대신 html 태그를 직접 입력하여, `<img src="image-src" height="400" width="400">`와 같이 크기를 조절해줄 수 있습니다. 원래 markdown이 우리가 자연어에 가깝게 입력하면 이것을 html으로 변환해주는 원리이기 때문에, markdown에서 안될땐 html을 직접 쓰면 거의 대부분의 문제가 해결됩니다😉
 
-<br/>
 
 # 🎠 애니메이션 효과
 

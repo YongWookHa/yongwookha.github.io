@@ -40,8 +40,7 @@ _참조 1: [official tutorial](https://pymongo.readthedocs.io/en/stable/tutorial
 _참조 2: [official document - pymongo.collection](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection)_  
 
 ---
-
-<br/> 
+ 
 
 # 🐍 PyMongo
 
