@@ -7,9 +7,11 @@ cover-img: /assets/img/pep-8-summary.png
 comments: true
 ---
 
-> **PEP8 전문** : [https://yongwookha.github.io/MachineLearning/2022-02-10-pep8](https://yongwookha.github.io/MachineLearning/2022-02-10-pep8)
-
 Code convention의 존재 이유는, 코드는 쓰이는 양보다 읽히는 양이 훨씬 더 많기 때문이다. 결국, **가독성**을 높이고 여러 사람의 협업 결과물이 마치 한 사람이 만든 것 처럼 **일관성**있게 하려는 목적이다. 
+
+이번 포스트에서는, 전 포스트에서 정리했던 PEP-8의 **거의** 전문을 적당히 덜어내고 필요하겠다 싶은 부분만 요약한다. 전문은 아래 링크를 참조하자. 
+
+> **PEP8 전문** : [https://yongwookha.github.io/Study/2022-02-11-pep8](https://yongwookha.github.io/Study/2022-02-11-pep8)
 
 Code convention은 docstring, code style을 포함하므로, [PEP-8 (Style Guide)](https://www.python.org/dev/peps/pep-8/)을 다루기 전에, [PEP-257 (Docstring)](https://www.python.org/dev/peps/pep-0257/)과 [PEP-20(The Zen of Python)](https://www.python.org/dev/peps/pep-0020/)을 먼저 확인한다.
 
@@ -106,108 +108,111 @@ def complex(real=0.0, imag=0.0):
 설명하기 어렵다면, 나쁜 아이디어다.
 설명하기 쉽다면, 좋은 아이디어다.
 Namespace는 아주 좋은 아이디어다. 막 쓰자.
-```
+```  
 
 > **요약** : 가독성은 중요하다.
 
 # PEP-8
 
 PEP-8의 한국어 번역본은 [여기](https://zerosheepmoo.github.io/)에서 확인할 수 있다. 전문을 모두 읽어보는 것이 권장된다.
-
 아래에서는 PEP-8의 내용 중, 중요하다 생각되는 몇가지 항목을 발췌한다.
 
 ## Code Layout
 
-### 들여쓰기
-- 4개의 space로 들여쓰기를 하자.
-```python
-# Correct:
+### 들여쓰기  
 
-# 괄호 기준 정렬
-foo = long_function_name(var_one, var_two,
-                         var_three, var_four)
+4개의 space로 들여쓰기를 하자.
+  
+  ```python
+  # Correct:
 
-# argument 이후 부분과의 분리를 위해 추가 들여쓰기
-def long_function_name(
-        var_one, var_two, var_three,
-        var_four):
-    print(var_one)
+  # 괄호 기준 정렬
+  foo = long_function_name(var_one, var_two,
+                          var_three, var_four)
 
-# indentation level을 하나 더 주기
-foo = long_function_name(
-    var_one, var_two,
-    var_three, var_four)
-```
-```python
-# Wrong:
+  # argument 이후 부분과의 분리를 위해 추가 들여쓰기
+  def long_function_name(
+          var_one, var_two, var_three,
+          var_four):
+      print(var_one)
 
-# 세로줄 안맞음. -> 첫 번째 줄의 argument 없애야 함.
-foo = long_function_name(var_one, var_two,
-    var_three, var_four)
+  # indentation level을 하나 더 주기
+  foo = long_function_name(
+      var_one, var_two,
+      var_three, var_four)
+  ```
 
-# 다음 줄과의 가독성이 떨어짐 -> argument 부분에 추가 indentation을 주어야 함.
-def long_function_name(
-    var_one, var_two, var_three,
-    var_four):
-    print(var_one)
-```
+  ```python
+  # Wrong:
 
-`if`문의 조건 부분이 여러 줄을 할당해야 할만큼 길다면, `if` 두 글자와 띄어쓰기(` `) 하나, 여는 괄호(`(`))를 조합하면 자연스럽게 4-space indent를 만들 수 있다는 점을 주목하자. 
+  # 세로줄 안맞음. -> 첫 번째 줄의 argument 없애야 함.
+  foo = long_function_name(var_one, var_two,
+      var_three, var_four)
 
-```python
-# No extra indentation.
-if (this_is_one_thing and
-    that_is_another_thing):
-    do_something()
+  # 다음 줄과의 가독성이 떨어짐 -> argument 부분에 추가 indentation을 주어야 함.
+  def long_function_name(
+      var_one, var_two, var_three,
+      var_four):
+      print(var_one)
+  ```
 
-# Add a comment, which will provide some distinction in editors
-# supporting syntax highlighting.
-if (this_is_one_thing and
-    that_is_another_thing):
-    # Since both conditions are true, we can frobnicate.
-    do_something()
+`if`문의 조건 부분이 여러 줄을 할당해야 할만큼 길다면, `if` 두 글자와 띄어쓰기(` `) 하나, 여는 괄호(`(`)를 조합하면 자연스럽게 4-space indent를 만들 수 있다는 점을 염두에 두자. 
 
-# Add some extra indentation on the conditional continuation line.
-if (this_is_one_thing
-        and that_is_another_thing):
-    do_something()
-```
+  ```python
+  # No extra indentation.
+  if (this_is_one_thing and
+      that_is_another_thing):
+      do_something()
+
+  # Add a comment, which will provide some distinction in editors
+  # supporting syntax highlighting.
+  if (this_is_one_thing and
+      that_is_another_thing):
+      # Since both conditions are true, we can frobnicate.
+      do_something()
+
+  # Add some extra indentation on the conditional continuation line.
+  if (this_is_one_thing
+          and that_is_another_thing):
+      do_something()
+  ```
 
 위의 예시에서 두번째와 세번째처럼, 주석이나 extra indentation을 통해 조건문을 다음 코드들과 시각적으로 분리한다. 
 
 `list`나 `function`, `class` 등이 multi-line consturct로 구성되는 경우에는 아래처럼, 닫는 괄호를 리스트의 마지막 줄의 첫번째 글자에 맞추거나 construct의 첫번째 글자에 맞춘다.
 
-```python
-my_list = [
-    1, 2, 3,
-    4, 5, 6,
-    ]
-result = some_function_that_takes_arguments(
-    'a', 'b', 'c',
-    'd', 'e', 'f',
-    )
-```
-```python
-# 또는
+  ```python
+  my_list = [
+      1, 2, 3,
+      4, 5, 6,
+      ]
+  result = some_function_that_takes_arguments(
+      'a', 'b', 'c',
+      'd', 'e', 'f',
+      )
+  ```  
 
-my_list = [
-    1, 2, 3,
-    4, 5, 6,
-]
-result = some_function_that_takes_arguments(
-    'a', 'b', 'c',
-    'd', 'e', 'f',
-)
+  ```python
+  # 또는
+
+  my_list = [
+      1, 2, 3,
+      4, 5, 6,
+  ]
+  result = some_function_that_takes_arguments(
+      'a', 'b', 'c',
+      'd', 'e', 'f',
+  )
 ```
 
 ### 한 줄의 최대 길이
 
-- 모든 라인은 79자. docstring은 72자. -> 에디터 이용 편의. 피치못한 경우 백슬래시(`\`)를 이용
-```python
-with open('/path/to/some/file/you/want/to/read') as file_1, \
-     open('/path/to/some/file/being/written', 'w') as file_2:
-    file_2.write(file_1.read())
-```
+모든 라인은 79자. docstring은 72자. -> 에디터 이용 편의. 피치못한 경우 백슬래시(`\`)를 이용  
+  ```python
+  with open('/path/to/some/file/you/want/to/read') as file_1, \
+      open('/path/to/some/file/being/written', 'w') as file_2:
+      file_2.write(file_1.read())
+  ```
 
 ### Binary Operator와 line break  
 
@@ -273,8 +278,7 @@ from <module> import *
 
 쓸데 없는 whitespace를 피하라. 다음의 상황에서는 공백을 없앤다.
 
-- 괄호 바로 안 공백
-
+- 괄호 바로 안 공백  
   ```python
   # Correct:
   spam(ham[1], {eggs: 2})
@@ -282,6 +286,7 @@ from <module> import *
    # Wrong:
   spam( ham[ 1 ], { eggs: 2 } )
   ```
+
 - trailing comma(`,`)와 닫는 괄호 사이 공백
   ```python
   # Correct:
@@ -290,6 +295,7 @@ from <module> import *
   # Wrong:
   bar = (0, )
   ```
+
 - `,`, `;`, `:` 바로 전 공백
   ```python
   # Correct:
@@ -313,6 +319,7 @@ from <module> import *
   ham[lower : : upper]
   ham[ : upper]
   ```
+
 - 여는 괄호 바로 앞
   ```python
   # Correct:
@@ -323,6 +330,7 @@ from <module> import *
   spam (1)
   dct ['key'] = lst [index]
   ```
+
 - assignment operator 앞, 하나 이상의 공백
   ```python
   # Correct:
@@ -335,6 +343,7 @@ from <module> import *
   y             = 2
   long_variable = 3
   ```
+
 - 우선도가 다른 operator를 함께 사용하는 경우, low priority operator 좌우에 공백을 하나 추가해서 가독성을 높이는 것은 좋다.
   ```python
   # Correct:
@@ -351,6 +360,7 @@ from <module> import *
   hypot2 = x * x + y * y
   c = (a + b) * (a - b)
   ```
+
  - 한 라인에 여러 구문을 적는 것은 지양하자.  
   ```python
   # Correct:
@@ -360,25 +370,27 @@ from <module> import *
   do_two()
   do_three()
   ```
+  ```python
+  # Wrong:
+  if foo == 'blah': do_blah_thing()
+  do_one(); do_two(); do_three()
+  ```  
 
-# Wrong:
-if foo == 'blah': do_blah_thing()
-do_one(); do_two(); do_three()
-```
- ### Inline Comments  
+### Inline Comments  
+
 무분별한 inline comment 사용은 지양한다.
 
 Inline comment는 코드 구문과 같은 줄에 위치한다. 구문 후에 _최소_ 두 칸을 띄우고 `#`, 그리고 한 칸을 더 띄우고 시작한다.
 
 코드가 명확한 경우에는 inline comment를 쓰지 않는다. 이는 오히려 주의를 산만하게 하기 때문이다. 코드의 의미를 설명할 때는 유용하게 사용 가능하다. 예를들면 아래와 같다.
 
-```python
-# Wrong:
-x = x + 1                 # Increment x
+  ```python
+  # Wrong:
+  x = x + 1                 # Increment x
 
-# Correct:
-x = x + 1                 # Compensate for border
-```
+  # Correct:
+  x = x + 1                 # Compensate for border
+  ```
  
 ## Naming Conventions
 
@@ -509,12 +521,12 @@ public attribute는 class 내부 로직을 모르는 사람이 사용할 것으�
 - public attribute의 이름 앞에는 `_`를 붙이지 않는다.
 - public attribute의 이름이 파이썬 예약어와 충돌한다면, 이름의 뒤에 `_`를 붙인다.
 - 간단한 public data attribute라면, 복잡한 accessor/mutator를 만드는 것 보다는 그냥 attribute name을 노출하는 것이 낫다. 간단한 attribute data지만, functional한 동작이 필요하다면 [`property`](https://docs.python.org/3/library/functions.html#property)를 이용하자.
-  1. attribute의 functional 동작이 side-effect를 발생시키지 않도록 주의하자
-  2. 연산량이 많은 경우 property를 쓰지 말자.
+  - attribute의 functional 동작이 side-effect를 발생시키지 않도록 주의하자
+  - 연산량이 많은 경우 property를 쓰지 말자.
 - subclass에서 사용될 목적으로 `class`를 만들면서, 특정 attribute는 subclass에서 이용되지 않길 바란다면, `__`로 시작하는 이름을 붙인다. (mangling)
-  1. 만약 subclass에서도 같은 class 이름과 attribute 이름을 사용한다면, 여전히 충돌 가능성이 있음에 유의하자.
-  2. name mangling은 debugging과 `__getattr__()`를 쓸 때 조금 불편할 수 있다.
-  3. 모두가 name mangling을 좋아하지는 않을 수 있다.
+  - 만약 subclass에서도 같은 class 이름과 attribute 이름을 사용한다면, 여전히 충돌 가능성이 있음에 유의하자.
+  - name mangling은 debugging과 `__getattr__()`를 쓸 때 조금 불편할 수 있다.
+  - 모두가 name mangling을 좋아하지는 않을 수 있다.
 
 #### Public and Internal Interfaces
 
