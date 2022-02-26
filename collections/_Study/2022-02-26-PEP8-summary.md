@@ -1,21 +1,19 @@
 ---
 layout: post
-title: PEP-8
-subtitle: 파이썬 코드 스타일 가이드
+title: PEP-8 요약
+subtitle: 꼭 읽어봐야할 파이썬 코드 스타일 가이드
 tags: [DEVELOP, STUDY]
-cover-img: /assets/img/PEP_8.jpg
+cover-img: /assets/img/pep-8-summary.png
 comments: true
 ---
 
-파이썬은 특정인 또는 집단이 언어 발전을 주도하기 보다는, 수많은 사람들의 의견을 청취하고 토론하며 수용하여 발전해왔다. 이 과정에서 사용자로부터 제안된 수많은 주제들을 PEP(Python Enhancement Proposals)라는 prefix가 붙은 문서로 관리하고 있다.
+> **PEP8 전문** : [https://yongwookha.github.io/MachineLearning/2022-02-10-pep8](https://yongwookha.github.io/MachineLearning/2022-02-10-pep8)
 
-[PEP-8](https://www.python.org/dev/peps/pep-0008/)은 그 중, 8번째 문서이며 파이썬 코드 스타일 가이드의 내용을 담고 있다. 본 포스트에서는 해당 내용 중, 자주 사용되는 항목들을 발췌, 의역, 재구성하여 다룬다. _쓰다보니 다 중요해보여서 거의 전부 담았다._
+Code convention의 존재 이유는, 코드는 쓰이는 양보다 읽히는 양이 훨씬 더 많기 때문이다. 결국, **가독성**을 높이고 여러 사람의 협업 결과물이 마치 한 사람이 만든 것 처럼 **일관성**있게 하려는 목적이다. 
 
-> **PEP8 요약** : [https://yongwookha.github.io/MachineLearning/2022-02-10-pep8](https://yongwookha.github.io/MachineLearning/2022-02-26-pep8-summary)
+Code convention은 docstring, code style을 포함하므로, [PEP-8 (Style Guide)](https://www.python.org/dev/peps/pep-8/)을 다루기 전에, [PEP-257 (Docstring)](https://www.python.org/dev/peps/pep-0257/)과 [PEP-20(The Zen of Python)](https://www.python.org/dev/peps/pep-0020/)을 먼저 확인한다.
 
 # Docstring
-
-본격적으로 내용을 다루기 전에, [PEP-8](https://www.python.org/dev/peps/pep-0008/)에서는 다루지 않는 [PEP-257 (Docstring)](https://www.python.org/dev/peps/pep-0257/)에 대한 내용들을 확인한다.
 
 Docstring은 `module`, `function`, `class`, or `method`를 정의할 때, 설명을 위해 기술되는 텍스트다. 이러한 Docstring은 `object`의 `__doc__` attribute로 지정된다.
 
@@ -28,7 +26,7 @@ Docstring은 `module`, `function`, `class`, or `method`를 정의할 때, 설명
 
 ## One-line Docstring
 
-One-line Docstring은 간단하고 명확하다.
+One-line docstring은 간단하고 명확하다.
 
 ```python
 def kos_root():
@@ -38,6 +36,8 @@ def kos_root():
 Docstring 전에 공백 라인을 포함시키지 않는다. Docstring은 `function`이나 `method`의 효과를 설명이 아닌 명령으로 표현한다. 예를들어, "이 함수는 A를 하고 B를 리턴합니다."가 아니라 "A하여 B리턴"과 같이 간단하게 적는다.
 
 ```python
+# only in C function
+
 def function(a, b):
     """function(a, b) -> list"""
 ```
@@ -70,7 +70,7 @@ def complex(real=0.0, imag=0.0):
     ...
 ```
 
-요약 부분은 자동 indexing tool 등에서 이용될 수 있다. 한 줄에 맞추는게 중요하고, 나머지 Docstring과는 빈 줄로 구분되어야 한다. 요약 줄은 여는 따옴표(`"""`) 뒤에 또는, 바로 아래 줄에 쓰도록 한다. 그리고 모든 Docstring은 여는 따옴표와 같은 indent에 쓴다. docstring을 모두 작성하면 따옴표를 닫고, 한 줄을 띄우고 작성한다. 
+요약 부분 은 자동 indexing tool 등에서 이용될 수 있다. 한 줄에 맞추는게 중요하고, 나머지 Docstring과는 빈 줄로 구분되어야 한다. 요약 줄은 여는 따옴표(`"""`) 뒤에 또는, 바로 아래 줄에 쓰도록 한다. 그리고 모든 Docstring은 여는 따옴표와 같은 indent에 쓴다. docstring을 모두 작성하면 따옴표를 닫고, 한 줄을 띄우고 작성한다. 
 
 이외에, `script`, `module`, `package`, `function`, `class`에 따라 참고해야할 사항을 아래에 정리한다.
 
@@ -82,39 +82,9 @@ def complex(real=0.0, imag=0.0):
 | `function` | - 함수의 동작과 arguments, return value(s), side-effects, exceptions, 호출 제약사항을 요약 서술 <br/>- Optional arguments는 표시되어야 함 |
 | `class` | - public method와 instance들의 목록에 대한 요약 서술 <br/>- subclass가 있고, 추가된 interface가 있는 경우, 해당 목록에 대해 별도로 표시 <br/> - `__init__` method를 포함한 개별 method들은 각자의 Docstring을 가짐. |
 
-그 외에, [`Handling Docstring Indentation`](https://www.python.org/dev/peps/pep-0257/#handling-docstring-indentation) 등의 Docstring 스타일 trimming 방법에 대한 내용들이 있는데, 이번 포스트에서는 다루지 않는다.
+# The Zen of Python
 
----
-
-# PEP-8
-
-위에서 언급한 대로, PEP-8은 하나의 고정된 제약 사항이 아니다. Python 언어의 발전과 변화에 따라 끊임 없이 수정되거나 추가되어 과거의 convention과 달라질 수 있다. 따라서 [PEP-8의 Introduction](https://www.python.org/dev/peps/pep-0008/#introduction)에서는 만약, style guideline이 있는 프로젝트에서 PEP-8의 내용과 충돌하는 convention이 있다면, 해당 프로젝트의 guideline을 따르라 충고한다.
-
-일관성은 중요하다. 프로젝트에서의 일관성은 더 중요하다. 하나의 `module`이나 `function`에서의 일관성은 가장 중요하다. 하지만, `PEP-8`의 style guide는 "추천"이다. 적용이 어렵거나, 의심이 드는 경우, 프로그래머의 "판단"이 우선한다. 이 모든 것은 가독성을 위함이며 가독성은 장기적 업무 효율을 위함이다. 가독성을 훼손하거나, 업무 효율을 저해하는 경우, 굳이 강박적으로 style guide를 적용할 필요는 없다.
-
-[PEP-20](https://www.python.org/dev/peps/pep-0020/)에는 파이썬 디자인 원칙을 간결하게 정리한 "The Zen of Python"이라는 **시**가 한편 있다. 읽어봄직해서 가져왔다.
-
-```
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested. 
-Sparse is better than dense.
-Readability counts.
-Special cases aren't special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it. 
-Although that way may not be obvious at first unless you're Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it's a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!
-```
+[PEP-20)](https://www.python.org/dev/peps/pep-0020/)에 기록된 파이썬의 디자인 원칙을 나타내는 _한편의 시_ 다.
 
 ```
 아름다운게 못생긴 것보다 낫다.
@@ -138,43 +108,44 @@ Namespaces are one honking great idea -- let's do more of those!
 Namespace는 아주 좋은 아이디어다. 막 쓰자.
 ```
 
----  
+> **요약** : 가독성은 중요하다.
 
-## Code Lay-out
+# PEP-8
 
-### Indentation
+PEP-8의 한국어 번역본은 [여기](https://zerosheepmoo.github.io/)에서 확인할 수 있다. 전문을 모두 읽어보는 것이 권장된다.
 
-4개의 스페이스(space)를 이용한 들여쓰기를 한다.
+아래에서는 PEP-8의 내용 중, 중요하다 생각되는 몇가지 항목을 발췌한다.
 
-이어지는 라인에서는 괄호 안에 들어오는 인자(argument)들을 첫번째 인자 기준으로 **수직**으로 배치한다. 또는 [Hanging indentation](https://www.python.org/dev/peps/pep-0008/#fn-hi)를 쓸 수도 있다. Hanging indentation는 구문에서, 첫줄을 제외한 나머지 모든 줄에 indtent를 주는 방법이다. _그래서 Hanging(달려있다)인가 보다._ 첫 줄에 인자가 없어야하며, indentation level을 추가하여 다음에 기술된 코드들과 인자들을 구별하기 쉽게 만들어야한다.
+## Code Layout
 
+### 들여쓰기
+- 4개의 space로 들여쓰기를 하자.
 ```python
 # Correct:
 
-# Aligned with opening delimiter.
+# 괄호 기준 정렬
 foo = long_function_name(var_one, var_two,
                          var_three, var_four)
 
-# Add an extra level of indentation to distinguish arguments from the rest.
+# argument 이후 부분과의 분리를 위해 추가 들여쓰기
 def long_function_name(
         var_one, var_two, var_three,
         var_four):
     print(var_one)
 
-# Hanging indents should add a level.
+# indentation level을 하나 더 주기
 foo = long_function_name(
     var_one, var_two,
     var_three, var_four)
 ```
-
 ```python
 # Wrong:
 
-# Arguments on first line forbidden when not using vertical alignment.
+# 세로줄 안맞음. -> 첫 번째 줄의 argument 없애야 함.
 foo = long_function_name(var_one, var_two,
     var_three, var_four)
 
-# Further indentation required as indentation is not distinguishable.
+# 다음 줄과의 가독성이 떨어짐 -> argument 부분에 추가 indentation을 주어야 함.
 def long_function_name(
     var_one, var_two, var_three,
     var_four):
@@ -229,27 +200,16 @@ result = some_function_that_takes_arguments(
 )
 ```
 
-### Tabs or Spaces
+### 한 줄의 최대 길이
 
-[Intendation](#indentation)에서 언급한 대로, Tab 보다는 Space를 이용한 intendation을 이용하는 것이 선호된다. 파이썬은 tab과 space의 혼용을 금지하므로, 이미 tab으로 쓰여있는 코드에 작업을 더하는 경우가 아니라면 space를 쓰자.
-
-_최근에는 대부분의 에디터가 `.py` 파일의 작성에서는 유저가 키보드의 tab을 입력하더라도 미리 설정된 n개의 space로 치환해서 입력해준다. 내가 쓰는 에디터를 확인해보자._
-
-### Maximum Line Length
-
-모든 라인은 79개의 character로 제한한다. Docstrings 이나 주석의 경우 72자로 제한한다. 제한의 이유는 에디터에서 여러개의 파일을 화면 좌우로 분할하여 열었을 때의 편의와 코드 리뷰에서 버전에 따른 코드 비교를 원활하게 하기 위함이다. 특정 팀이 코드를 내부적으로, 또는 주도적으로 유지하는 경우 글자 제한을 99자까지 상향해도 좋다. 하지만 Docstring과 주석은 여전히 72자로 제한한다.
-
-긴 구문을 79자 제한을 지키기 위해서 분리해야할 때, 괄호 내부에서는 [위](#indentation)에서 언급한 대로 암시적으로 라인을 바꾸는 것이 좋다. 긴 구문의 경우, 이용 아래와 같이 backslash(`\`)를 이용한다. 
-
+- 모든 라인은 79자. docstring은 72자. -> 에디터 이용 편의. 피치못한 경우 백슬래시(`\`)를 이용
 ```python
 with open('/path/to/some/file/you/want/to/read') as file_1, \
      open('/path/to/some/file/being/written', 'w') as file_2:
     file_2.write(file_1.read())
 ```
 
-### Binary Operator와 line break
-
-결론적으로, Operator 앞에서 line break을 하는 것이 좋다.
+### Binary Operator와 line break  
 
 ```python
 # Wrong:
@@ -272,10 +232,6 @@ income = (gross_wages
 ### Blank Lines
 
 `function` 과 `class`의 정의는 두 줄의 공백으로 구분한다. `class`안의 method는 한 줄의 공백으로 구분한다. 연관된 `function`들끼리 그룹을 나누기 위해 추가적인 공백 라인을 이용할 수도 있다.
-
-### Source File Encoding
-
-UTF-8을 쓰자.
 
 ### Imports
 
@@ -312,40 +268,6 @@ Wildcard(`*`) imports는 namespace에 어떤 name들이 있는지 불명확하�
 # Wrong:
 from <module> import *
 ```
-
-### Module Level Dunder Names
-
-Module level에서 `__all__`, `__author__`, `__version__`과 같이 `__`으로 둘러쌓인 object를 지칭하는 **dunders**는 `__future__` import 를 제외한 import문 최상단에 배치한다.
-
-> _`__future__` import는 docstring을 제외하고는 최상단에 위치해야 한다._
-
-```python
-"""This is the example module.
-
-This module does stuff.
-"""
-
-from __future__ import barry_as_FLUFL
-
-__all__ = ['a', 'b', 'c']
-__version__ = '0.1'
-__author__ = 'Cardinal Biggles'
-
-import os
-import sys
-```
-
----  
-
-## String Quotes
-
-파이썬에서는 string을 표현할 때 따옴표(`'`) 또는 쌍따옴표(`"`)를 모두 이용할 수 있고, 둘은 똑같은 기능을 한다. 가독성을 위해 따옴표 종류 하나를 정하고 그것을 일관적으로 이용하는 것을 추천한다. 
-
-따옴표 또는 쌍따옴표로 string 표현을 정하고 나면, 백슬래스(`\`)의 사용을 줄이고 가독성을 높이기 위해 string 내부에는 남은 따옴표를 이용한다. e.g.) `x = "abc and 'd'"`, `y = 'efg and "h"'`
-
----  
-
-## Whitespace in Expressions and Statements
 
 ### Pet Peeves (거슬리게 하는 것)
 
@@ -413,11 +335,6 @@ import sys
   y             = 2
   long_variable = 3
   ```
-
-### 그 외  
-
-- Trailing whitespace는 지양하자.
-- `=`, `+=`, `-=`, `==`, `>`, `<`, `!=`, `<>`, `<=`, `>=`, `in`, `not in`, `is`, `is not`, `and`, `or`, `not`과 같은 binary operator의 좌우에는 하나의 공백을 둔다.
 - 우선도가 다른 operator를 함께 사용하는 경우, low priority operator 좌우에 공백을 하나 추가해서 가독성을 높이는 것은 좋다.
   ```python
   # Correct:
@@ -434,37 +351,7 @@ import sys
   hypot2 = x * x + y * y
   c = (a + b) * (a - b)
   ```
-- Function annotation에서 화살표(`->`) 좌우에 공백을 둔다
-  ```python
-  # Correct:
-  def munge(input: AnyStr): ...
-  def munge() -> PosInt: ...
-
-  # Wrong:
-  def munge(input:AnyStr): ...
-  def munge()->PosInt: ...
-  ```
-- Default value를 표현할 때, 또는 keyword argument를 표현할 때 사용되는 `=` 좌우에 공백을 넣지 않는다.
-  ```python
-  # Correct:
-  def complex(real, imag=0.0):
-      return magic(r=real, i=imag)
-  
-  # Wrong:
-  def complex(real, imag = 0.0):
-      return magic(r = real, i = imag)
-  ```
-  **하지만** annotation과 default value를 조합할 때는 `=` 좌우에 공백을 넣는다.
-  ```python
-  # Correct:
-  def munge(sep: AnyStr = None): ...
-  def munge(input: AnyStr, sep: AnyStr = None, limit=1000): ...
-
-  # Wrong:
-  def munge(input: AnyStr=None): ...
-  def munge(input: AnyStr, limit = 1000): ...
-  ```
-- 한 라인에 여러 구문을 적는 것은 지양하자.
+ - 한 라인에 여러 구문을 적는 것은 지양하자.  
   ```python
   # Correct:
   if foo == 'blah':
@@ -472,48 +359,13 @@ import sys
   do_one()
   do_two()
   do_three()
-
-  # Wrong:
-  if foo == 'blah': do_blah_thing()
-  do_one(); do_two(); do_three()
   ```
 
----  
-
-## When to Use Trailing Commas
-
-Trailing Comma는 element가 하나인 tuple을 표현하기 위한 용도와 괄호 안에서 다음 줄이 연결된다는 정보를 명시적으로 알리기 위해 이용할 수 있다.
-
-```python
-# Correct:
-FILES = ('setup.cfg',)
-FILES = [
-    'setup.cfg',
-    'tox.ini',
-    ]
-initialize(FILES,
-           error=True,
-           )
-
 # Wrong:
-FILES = 'setup.cfg',
-FILES = ['setup.cfg', 'tox.ini',]
-initialize(FILES, error=True,)
+if foo == 'blah': do_blah_thing()
+do_one(); do_two(); do_three()
 ```
-
----
-
-## Comments  
-코드의 실제 내용과 다른 주석은 없느니만 못하다. 항상 주석을 업데이트하는데 신경써야 한다. 주석은 완성된 문장이어야 하며, 변수를 지칭하는게 아니라면 영문 주석에서 첫 글자는 대문자로 적는다.
-
-블록 주석은 일반적으로 완전한 문장으로 구성된 하나 이상의 단락으로 구성되며, 각 문장은 마침표와 띄어쓰기 두 번으로 끝난다.
-
-주석은 최대한 읽기 쉽고 명확하게 써야한다. 그리고 외국인이 절대 읽지 않는다는 확신이 120% 있지 않는 한, 왠만하면 영어로 쓴다.
-
-### Block Comments  
-보통, 아래에 위치한 코드들을 설명하며 해당 코드와 같은 indentation으로 작성한다. 각 줄은 `#`와 하나의 띄어쓰기로 함께 시작하며, 단락이 나뉘는 경우 `#` 하나로 단락 사이를 구분한다.
-
-### Inline Comments  
+ ### Inline Comments  
 무분별한 inline comment 사용은 지양한다.
 
 Inline comment는 코드 구문과 같은 줄에 위치한다. 구문 후에 _최소_ 두 칸을 띄우고 `#`, 그리고 한 칸을 더 띄우고 시작한다.
@@ -527,16 +379,8 @@ x = x + 1                 # Increment x
 # Correct:
 x = x + 1                 # Compensate for border
 ```
-
-### Documentation Strings  
-
-위의 [Docstring](#Docstring) 참조.
-
----
-
+ 
 ## Naming Conventions
-
-파이썬의 많은 라이브러리들은 Naming Conventions이 제각각인 경우가 많다. 하지만 아래는 Python Standard라고 생각하고 새로운 `module`이나 `package`를 만들 때에는 지키도록 노력해보자. Standard를 따르지 않는 기존 라이브러리의 개발에는 일관성을 위해 해당 라이브러리의 Convention을 고수해도 무관하다.
 
 ### Overriding Principle
 
@@ -578,8 +422,6 @@ x = x + 1                 # Compensate for border
 
 `I`, `l`, `O`를 Single character로 표기하지 않는다.
 
-#### ASCII Compatibility
-
 #### Package and Module Names
 
 `package`와 `module`은 짧은 소문자의 이름을 가져야 한다. `Module`은 필요하다면 `_`도 이용 가능하지만, `Package`에서는 사용을 지양한다.
@@ -599,8 +441,6 @@ x = x + 1                 # Compensate for border
 `class` 이름은 일반적으로 `CapitalizedWords` Convention을 사용한다.
 
 인터페이스가 문서화되고 주로 callable으로 사용되는 경우, `function`의 Convention을 따를 수 있다.
-
-_`builtin` name에 대한 Convention은 별도로 있다는 사실에 유의하자. `builtin`에서는 exception이나 builtin constants에서만 `CapitalizedWords`를 이용한다._
 
 #### Type Variable Names
 
