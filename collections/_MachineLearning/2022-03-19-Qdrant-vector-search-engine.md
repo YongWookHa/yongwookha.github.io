@@ -17,7 +17,11 @@ Deep Learning 모델에 기반한 검색 시스템을 만들 때에는 새로운
 
 # 🚀 Qdrant
 
-본 포스트에서 다룰 Qdrant에서는 [Qdrant Documentation](https://qdrant.tech/documentation/)의 내용을 간략하게 정리한다. Qdrant는 `Semantic Search`, `Similar Image / Audio / Video Search`, `Recommendation Systems`에 적합하게 사용할 수 있다.
+본 포스트에서 다룰 Qdrant에서는 [Qdrant Documentation](https://qdrant.tech/documentation/)의 내용을 간략하게 정리한다. 이번 포스트에서는 Qdrant의 핵심 내용인 `Collections`, `Points`, `Payload`, `Search`에 대해 다룬다.
+
+Qdrant는 `Semantic Search`, `Similar Image / Audio / Video Search`, `Recommendation Systems`에 적합하게 사용할 수 있다.
+
+---
 
 ## 📥 Install 
 
@@ -34,6 +38,8 @@ docker run -p 6333:6333 -v $(pwd)/path/to/data:/qdrant/storage qdrant/qdrant
 위의 명령어로 `/path/to/data`에 모든 데이터를 저장하며, 6333 포트를 이용하는 Qdrant Instance를 실행할 수 있다.
 
 이후에는 ☸️`Kubernetes`를 이용해서 Orchestration을 할 수 있다.
+
+---
 
 ## 📄 Collections
 
@@ -78,6 +84,8 @@ PATCH /collections/example_collection
     }
 }
 ```
+
+---
 
 ## 🔗 Collection Aliases
 
@@ -138,7 +146,9 @@ POST /collections/aliases
 }
 ```
 
-## Points
+---
+
+## 🔮 Points
 
 Point는 Qdrant에 저장된 Vector값을 의미하며, 각 Point는 필요에 따라 추가적인 [Payload](#payload) 데이터를 구성할 수 있다. Point 데이터의 Modification Operation은 2단계로 수행된다. 첫번째 단계에서는 Operation이 `Write-ahead-log`에 작성된다. API가 `&wait=false` 파라미터와 함께 호출되거나 `&wait` 파라미터가 생략된다면, client는 아래와 같이 "데이터를 받았음"을 의미하는 acknowledgment를 받게 된다.
 
@@ -166,7 +176,7 @@ Point는 Qdrant에 저장된 Vector값을 의미하며, 각 Point는 필요에 �
 }
 ```
 
-### Point IDs
+###  Point IDs
 
 Qdrant는 Point의 id로 `64-bit unsigned integers`와 `UUID`를 지원한다. 
 
@@ -356,7 +366,9 @@ POST /collections/{collection_name}/points/scroll
 
 Scroll API는 `filter`에 매치되는 모든 Point를 page-by-page로 리턴한다. 결과는 Point의 ID를 기준으로 정렬된다. 다음 Page를 Query하기 위해, 현재 Page에서 가장 큰 Point의 ID를 API Call에서 Query의 `offset` 필드로 입력해야한다. 여기에 입력되어야 할 ID는 Response의 `next_page_offset` 필드를 보고도 알 수 있다. 만약 Response의 `next_page_offset`이 `null`이면 마지막 페이지로서, 다음 페이지가 없음을 뜻한다.
 
-## Payload
+---
+
+## 🛒 Payload
 
 Qdrant의 대표적 기능이 바로 Vector에 붙어있는 Payload 개념이다. Payload는 `key-value`로 구성되고, 각 key는 같은 Type의 여러 value를 가질 수 있다.
 
@@ -512,16 +524,148 @@ Index 설정 후에는 다음과 같이 collection info API에서 제공하는 P
 }
 ```
 
-## Search
+---
+
+## 🔍 Search
+
+Point에 Payload까지 업로드되었다면 이제 유사한 벡터를 찾아내는 Search 기능을 알아볼 차례다.
 
 ### Similarity Search
 
+많은 현대의 ML 모델들은 실제로 가까운 오브젝트들을 벡터 공간 상에서도 가깝도록 벡터 변환하게 설계되고 학습된다. 아래는 이미지는 쉬운 이해를 돕는다.
+
+![https://qdrant.tech/docs/encoders.png](https://qdrant.tech/docs/encoders.png)
+
 ### Metrics
+
+'가깝다'를 정의하는 방법을 Metric이라고 한다. 본 포스트의 최상단에 언급한 대로, 여러가지 Metric이 있다. Qdrant에서는 아래의 가장 자주 사용되는 3가지 Metric을 제공한다.
+
+- Dot product: Dot - [https://en.wikipedia.org/wiki/Dot_product](https://en.wikipedia.org/wiki/Dot_product)
+- Cosine similarity: Cosine - [https://en.wikipedia.org/wiki/Cosine_similarity](https://en.wikipedia.org/wiki/Cosine_similarity)
+- Euclidean distance: Euclid - [https://en.wikipedia.org/wiki/Cosine_similarity](https://en.wikipedia.org/wiki/Euclidean_distance)
+
+Qdrant는 빠른 연산을 위해 Collection에 입력되는 벡터를 Normalize하고, Dot production으로 변환하는 2단계를 거쳐 진행한다.
 
 ### Query Planning
 
+Search에서 사용되는 Filter에 따라, Query 실행에 대한 몇가지 가능한 시나리오가 있다. Qdrant는 사용가능한 Index와 Filter 조건의 복잡성, 그리고 Filter 결과의 개수를 고려해서 가장 적합한 Query 실행 방법을 선택한다. 이 과정을 Query Planning이라고 한다.
+
+Query 선택 방법은 상당수 Heuristic에 의존하며 Qdrant 배포 버전에 따라 변할 수 있다.
+
 ### Search API
+
+Search API는 다음과 같이 실행할 수 있다.
+
+```
+POST /collections/{collection_name}/points/search
+{
+    "filter": {
+        "must": [
+            {
+                "key": "city",
+                "match": {
+                    "keyword": "London"
+                }
+            }
+        ]
+    },
+    "params": {
+        "hnsw_ef": 128
+    },
+    "vector": [0.2, 0.1, 0.9, 0.7],
+    "top": 3
+}
+```
+
+위의 예제는 벡터 `[0.2, 0.1, 0.9, 0.7]`과 가장 유사한 3개의 벡터를 찾아 리턴한다. `params`는 Search 실행에 사용되는 parameter를 입력한다. `hnsw_ef`는 HNSW index(Beam Search 알고리즘에서 beam size)를 의미하며, 높을수록 정확하지만 느리다.
+
+`filter`가 명시되었으므로, `filter`의 조건을 만족하는 Points들 사이에서만 유사도 계산이 수행된다. `filter` 작성 방법은 [https://qdrant.tech/documentation/filtering](https://qdrant.tech/documentation/filtering)를 참조하자.
+
+위 예제의 Response는 아래와 같다. `result`는 `score` 순서대로 정렬되어 있다.
+
+```
+{
+  "result": [
+    { "id": 10, "score": 0.81 },
+    { "id": 14, "score": 0.75 },
+    { "id": 11, "score": 0.73 }
+  ],
+  "status": "ok",
+  "time": 0.001
+}
+```
 
 #### Payload in Vector in the Result
 
+Search 실행 시, Default로는 `id`를 제외한 다른 데이터를 반환하지 않는다. `with_vector`나 `with_payload`를 통해 원하는 데이터를 반환받을 수 있다.
+
+```
+POST /collections/{collection_name}/points/search
+{
+    "vector": [0.2, 0.1, 0.9, 0.7],
+    "with_vector": true,
+    "with_payload": true
+}
+```
+
+`with_payload`의 경우, 아래와 같이 `include` 또는 `exclude`로 반환받을 Field를 제어할 수 있다.
+
+```
+POST /collections/{collection_name}/points/search
+{
+    "vector": [0.2, 0.1, 0.9, 0.7],
+    "with_payload": {
+      "exclude": ["city"]
+    }
+}
+```
+
 ### Recommendtaion API
+
+> Negative Vector에 대한 지원은 현재(2022.03) 실험적 기능으로 제공되며, 모든 embedding에 대해 정확한 작동을 보장하지 않는다.
+
+일반적인 검색 뿐만 아니라, Qdrant는 이미 저장되어 있는 데이터들에 대한 검색도 지원한다. 이 API를 이용하면 Neural Network의 Encoder를 이용하지 않고 이미 Encode된 Object를 검색할 수 있다.
+
+이미 저장되어 있는 Vector들을 이용하여 `positive_vectors`, `negative_vectors`를 지정하는 방식으로 검색을 할 수 있다. `positive_vectors`에 가까운 Point는 가중치를 받고, `negative_vectors`에 가까운 Point는 패널티를 받는다.
+
+`positive_vectors`, `negative_vectors`에 사용될 Vector는 ID를 통해 지정하며 아래와 같이 `average_vector`를 계산해서 그 결과를 기준으로 검색하게 된다.
+
+```
+average_vector = avg(positive_vectors) + ( avg(positive_vectors) - avg(negative_vectors) )
+```
+
+아래와 같이 Recommendation API를 호출할 수 있다.
+
+```
+POST /collections/{collection_name}/points/recommend
+
+{
+  "filter": {
+        "must": [
+            {
+                "key": "city",
+                "match": {
+                    "keyword": "London"
+                }
+            }
+        ]
+  },
+  "negative": [718],
+  "positive": [100, 231],
+  "top": 10
+}
+```
+
+그리고 그 결과는 아래와 같다.
+
+```
+{
+  "result": [
+    { "id": 10, "score": 0.81 },
+    { "id": 14, "score": 0.75 },
+    { "id": 11, "score": 0.73 }
+  ],
+  "status": "ok",
+  "time": 0.001
+}
+```
