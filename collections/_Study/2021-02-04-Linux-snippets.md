@@ -80,3 +80,11 @@ curl -T <LOCAL_FILE> -u <FTP_USERNAME>:<FTP_PASSWORD> <ftp://<HOST>:<PORT>/<FILE
 ```bash
 curl -F "image=@image.png" http://127.0.0.1:5000/api/v1/
 ```
+
+## 📡 SFTP
+
+```bash
+sftp -P <port> <host-ip>
+# cd <dest-directory>
+put <local-file>
+```
