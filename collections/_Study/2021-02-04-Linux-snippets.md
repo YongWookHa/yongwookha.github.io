@@ -15,6 +15,17 @@ comments: true
 for file in `ls *.zip`; do unzip "${file}" -d "${file:0:-4}"; done
 ```
 
+`bz2`로 고효율 압축하기 (멀티코어)
+```
+# 압축
+tar --use-compress-prog=pbzip2 -cvf <압축 파일 이름> <압축할 파일 또는 폴더>
+```
+
+```
+# 압축 해제
+tar --use-compress-prog=pbunzip2 -xvf <압축 파일> <압축 해제 경로>
+```
+
 ## 💾 Disk Usage  
 ```bash  
 du -sh .  # 현재 폴더의 사용 용량
