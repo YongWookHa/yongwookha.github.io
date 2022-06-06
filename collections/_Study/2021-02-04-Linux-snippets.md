@@ -23,7 +23,7 @@ tar --use-compress-prog=pbzip2 -cvf <압축 파일 이름> <압축할 파일 또
 
 ```
 # 압축 해제
-tar --use-compress-prog=pbunzip2 -xvf <압축 파일> <압축 해제 경로>
+tar -I lbzip2 -xf <압축 파일>
 ```
 
 ## 💾 Disk Usage  
