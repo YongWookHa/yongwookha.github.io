@@ -15,6 +15,17 @@ comments: true
 for file in `ls *.zip`; do unzip "${file}" -d "${file:0:-4}"; done
 ```
 
+서브 디렉토리 내의 모든 tar 파일들을 해당 파일의 부모 디렉토리에 압축풀기
+```bash
+for file in `ls **/*.tar`; do; tar -xvf "${file}" -C "$(dirname "${file}")"; done;
+```  
+
+또는 
+
+```  
+find . -iname '*.zip' -exec sh -c 'unzip -o -d "${0%.*}" "$0"' '{}' ';'
+```
+
 `bz2`로 고효율 압축하기 (멀티코어)
 ```
 # 압축
