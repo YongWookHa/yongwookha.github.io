@@ -2,7 +2,7 @@
 layout: post
 title: 명품에 대한 단상
 subtitle: 도대체 명품은 왜 이렇게 비쌀까?
-tags: [LIFE, STUDY]
+tags: [LIFE, TRAVEL]
 cover-img: /assets/img/luxury-brands.png
 comments: true
 ---
