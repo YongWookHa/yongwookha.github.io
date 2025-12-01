@@ -39,6 +39,20 @@
     {% endfor %}
   {% endif %}
 
+  {% if page.layout == 'post' %}
+  <div class="nav-breadcrumb-container">
+    <span class="nav-breadcrumb">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      {% if page.collection %}
+      <span class="separator">&gt;</span>
+      <a href="{{ '/' | relative_url }}#{{ page.collection }}">{{ page.collection }}</a>
+      {% endif %}
+      <span class="separator">&gt;</span>
+      <span class="current">{{ page.title | truncate: 25 }}</span>
+    </span>
+  </div>
+  {% endif %}
+
   {% if site.avatar and page.show-avatar != false %}
     <div class="avatar-container">
       <div class="avatar-img-border">

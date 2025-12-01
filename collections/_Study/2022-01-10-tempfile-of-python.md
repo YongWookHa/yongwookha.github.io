@@ -3,7 +3,7 @@ layout: post
 title: 파이썬 tempfile
 subtitle: 임시 파일과 디렉터리 생성
 tags: [DEVELOP, STUDY]
-cover-img: assets/img/tempfile-python.png
+cover-img: assets/img/tempfile-python.webp
 comments: true
 ---
 

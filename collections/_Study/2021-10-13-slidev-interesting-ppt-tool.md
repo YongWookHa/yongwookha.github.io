@@ -3,7 +3,7 @@ layout: post
 title: Slidev, 흥미로운 개발자들의 ppt 도구
 subtitle: open source
 tags: [STUDY, DEVELOP]
-cover-img: /assets/img/slidev.png
+cover-img: /assets/img/slidev.webp
 comments: true
 ---
 

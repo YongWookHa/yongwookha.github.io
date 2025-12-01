@@ -806,6 +806,73 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   background-color: {{ site.hover-col | default: "#0085A1" }};
 }
 
+/* --- List Styles --- */
+
+/* 기본 리스트 스타일 (depth 1) */
+.blog-post ul,
+.blog-post ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.blog-post li {
+  margin: 0.3rem 0;
+  line-height: 1.6;
+}
+
+/* --- File Tree Style (depth 2+) --- */
+
+/* 중첩 리스트부터 파일 트리 스타일 적용 */
+.blog-post li > ul,
+.blog-post li > ol {
+  list-style: none;
+  margin: 0.4rem 0 0.4rem 0;
+  padding-left: 0.15rem;
+  margin-left: 0.35rem;
+}
+
+.blog-post li > ul > li,
+.blog-post li > ol > li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin: 0.2rem 0;
+}
+
+/* 트리 연결선 (├─) */
+.blog-post li > ul > li::before,
+.blog-post li > ol > li::before {
+  content: "├─";
+  position: absolute;
+  left: -0.15rem;
+  top: 0;
+  color: #d0d0d0;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 세로선 (마지막 항목 제외) */
+.blog-post li > ul > li::after,
+.blog-post li > ol > li::after {
+  content: "";
+  position: absolute;
+  left: 0.105rem;
+  top: 0.1em;
+  bottom: -1.1rem;
+  width: 1.6px;
+  background-color: #d0d0d0;
+}
+
+/* 마지막 항목은 L자로, 세로선 제거 */
+.blog-post li > ul > li:last-child::before,
+.blog-post li > ol > li:last-child::before {
+  content: "└─";
+}
+
+.blog-post li > ul > li:last-child::after,
+.blog-post li > ol > li:last-child::after {
+  display: none;
+}
+
 /* --- Tables --- */
 
 table {
@@ -996,4 +1063,92 @@ pre {
 .center {
   display: block;
   margin: 0 auto;
+}
+
+/* --- Breadcrumb navigation --- */
+
+.breadcrumb-nav {
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+  display: inline;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  padding: 0 0.5rem;
+  color: #6c757d;
+}
+
+.breadcrumb-item a {
+  color: {{ site.link-col | default: "#008AFF" }};
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  color: {{ site.hover-col | default: "#0085A1" }};
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: #6c757d;
+}
+
+/* 네비게이션 바 내 Breadcrumb */
+.navbar-custom .nav-breadcrumb-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar-custom .nav-breadcrumb a {
+  color: #404040;
+  text-decoration: none;
+}
+
+.navbar-custom .nav-breadcrumb a:hover {
+  color: {{ site.hover-col | default: "#0085A1" }};
+  text-decoration: underline;
+}
+
+.navbar-custom .nav-breadcrumb .separator {
+  color: #6c757d;
+  padding: 0 0.3rem;
+}
+
+.navbar-custom .nav-breadcrumb .current {
+  color: #6c757d;
+}
+
+/* 스크롤 시 (top-nav-short) breadcrumb 표시 */
+.navbar-custom.top-nav-short .nav-breadcrumb-container {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 모바일 대응: 작은 화면에서는 숨김 */
+@media (max-width: 767px) {
+  .navbar-custom .nav-breadcrumb-container {
+    display: none;
+  }
 }

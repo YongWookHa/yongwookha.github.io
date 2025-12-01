@@ -3,7 +3,7 @@ layout: post
 title: 오리지널스
 subtitle: 어떻게 순응하지 않는 사람들이 세상을 움직이는가
 tags: [LIFE, BOOK]
-cover-img: /assets/img/Book-Originals.jpg
+cover-img: /assets/img/Book-Originals.webp
 comments: true
 ---
 

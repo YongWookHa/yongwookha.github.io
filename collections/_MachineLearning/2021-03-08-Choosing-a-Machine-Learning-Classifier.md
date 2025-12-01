@@ -3,7 +3,7 @@ layout: post
 title: Machine Learning 분류 모델 선정하기
 subtitle: 상황별
 tags: [MACHINE_LEARNING]
-cover-img: assets/img/Machine-Learning-Cover.jpg
+cover-img: assets/img/Machine-Learning-Cover.webp
 comments: true
 mathjax: true
 ---

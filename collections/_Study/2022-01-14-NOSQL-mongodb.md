@@ -3,7 +3,7 @@ layout: post
 title: MongoDB, Not Only SQL
 subtitle: PyMongo, CRUD
 tags: [DEVELOP, STUDY]
-cover-img: assets/img/mongodb.png
+cover-img: assets/img/mongodb.webp
 comments: true
 ---
 

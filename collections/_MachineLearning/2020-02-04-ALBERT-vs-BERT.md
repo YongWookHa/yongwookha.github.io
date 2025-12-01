@@ -3,7 +3,7 @@ layout: post
 title: A Light BERT, ALBERT (2020) 
 subtitle: BERT와 비교하여 간단 정리
 tags: [MACHINE_LEARNING, NLP]
-cover-img: /assets/img/albert-einstein.jpg
+cover-img: /assets/img/albert-einstein.webp
 comments: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: 즉흥 제주 여행
 subtitle: feat. 테슬라 Model3
 tags: [TRAVEL, JEJU, KOREA]
-cover-img: assets/img/jeju_map.png
+cover-img: assets/img/jeju_map.webp
 comments: true
 ---
 

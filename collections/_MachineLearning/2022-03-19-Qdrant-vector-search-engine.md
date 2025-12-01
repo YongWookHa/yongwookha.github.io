@@ -3,7 +3,7 @@ layout: post
 title: Qdrant
 subtitle: Vector Search Engine
 tags: [MACHINE_LEARNING, DEVELOP, STUDY]
-cover-img: /assets/img/qdrant.png
+cover-img: /assets/img/qdrant.webp
 comments: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: PEP-8 요약
 subtitle: 꼭 읽어봐야할 파이썬 코드 스타일 가이드
 tags: [DEVELOP, STUDY]
-cover-img: /assets/img/pep-8-summary.png
+cover-img: /assets/img/pep-8-summary.webp
 comments: true
 ---
 
