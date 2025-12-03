@@ -20,8 +20,17 @@ collections:
 
 # --- Required options --- #
 
+# Site URL (required for sitemap, canonical URLs, and Open Graph)
+url: "https://yongwookha.github.io"
+
+# Site language
+lang: ko
+
 # Name of website
 title: YongWook Ha
+
+# Site description for SEO
+description: "머신러닝, 딥러닝, 개발 관련 기술 블로그. ML/AI 학습 노트, 책 리뷰, 여행 이야기를 공유합니다."
 
 # Your name to show in the footer
 author: YongWook-Ha
@@ -105,7 +114,7 @@ feed_show_excerpt: true
 feed_show_tags: true
 
 # The keywords to associate with your website, for SEO purposes
-#keywords: "my,list,of,keywords"
+keywords: "machine learning, 머신러닝, 딥러닝, deep learning, AI, 인공지능, 개발, 프로그래밍, 기술 블로그"
 
 # --- Colours / background image --- #
 
@@ -130,7 +139,7 @@ footer-link-col: "#404040"
 #page-img: "/assets/img/bgimage.png"
 
 # Suggest a colour for mobile browsers to use as the browser's theme. This is only supported by a few mobile browsers.
-#mobile-theme-col: "#0085A1"
+mobile-theme-col: "#0085A1"
 
 # For any extra visual customization, you can include additional CSS files in every page on your site. List any custom CSS files here
 #site-css:
